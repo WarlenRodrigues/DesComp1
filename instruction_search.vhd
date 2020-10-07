@@ -6,37 +6,51 @@ entity instruction_search is
     port
     (
 		  clock: in STD_LOGIC;
-		  mux_selector: in STD_LOGIC;
-		  instruction: out STD_LOGIC_VECTOR(16 downto 0)
+--		  mux_selector: in STD_LOGIC;
+		  instruction: out STD_LOGIC_VECTOR(15 downto 0);
+		  pintest: out STD_LOGIC_VECTOR(8 downto 0) -- TESTE TODO TIRAR
     );
 end entity;
 
 architecture rtl of instruction_search is
-signal pc_to_rom_and_adder: STD_LOGIC_VECTOR(9 downto 0);
-signal mux_to_pc: STD_LOGIC_VECTOR(9 downto 0);
-signal adder_to_mux: STD_LOGIC_VECTOR(9 downto 0);
-signal pc_instruction: STD_LOGIC_VECTOR(9 downto 0);
-signal on_instruction: STD_LOGIC_VECTOR(16 downto 0);
+signal pc_to_rom_and_adder: STD_LOGIC_VECTOR(8 downto 0);
+signal mux_to_pc: STD_LOGIC_VECTOR(8 downto 0);
+signal adder_to_mux: STD_LOGIC_VECTOR(8 downto 0);
+signal pc_instruction: STD_LOGIC_VECTOR(8 downto 0);
+signal on_instruction: STD_LOGIC_VECTOR(15 downto 0);
+signal control_points: STD_LOGIC_VECTOR(9 downto 0);
+signal selector_mux: STD_LOGIC;
+signal flip_flop_flag: STD_LOGIC;
 
 --signal pc_instruction <= instruction
 
-    begin
-	 pc_instruction <= on_instruction(9 downto 0);
-	 instruction <= on_instruction;
+alias opcode: STD_LOGIC_VECTOR (3 downto 0) is on_instruction(15 downto 12);
+alias jump: STD_LOGIC is control_points(9);
+alias je: STD_LOGIC is control_points(8);
 
-rom : entity work.rom   generic map (dataWidth => 17, addrWidth => 10)
+begin
+	 pc_instruction <= on_instruction(8 downto 0);
+	 instruction <= on_instruction;
+	 pintest <= pc_to_rom_and_adder; -- TESTE TODO TIRAR
+	 flip_flop_flag <= '0';
+	 selector_mux <= (je and flip_flop_flag) or jump;
+	 
+rom : entity work.rom   generic map (dataWidth => 16, addrWidth => 9)
           port map (Endereco => pc_to_rom_and_adder, Dado => on_instruction);
+
+control_unit : entity work.rom_cu   generic map (dataWidth => 10, addrWidth => 4)
+          port map (Endereco => opcode, Dado => control_points);
 			 
-pc : entity work.generic_register   generic map (larguraDados => 10)
+pc : entity work.generic_register   generic map (larguraDados => 9)
           port map (DIN => mux_to_pc, DOUT => pc_to_rom_and_adder, ENABLE => '1', CLK => clock, RST => '0');
 
-mux :  entity work.mux  generic map (larguraDados => 10)
-        port map( entradaA_MUX => pc_instruction,
-                 entradaB_MUX =>  adder_to_mux,
-                 seletor_MUX => mux_selector,
+mux :  entity work.mux  generic map (larguraDados => 9)
+        port map( entradaA_MUX => adder_to_mux,
+                 entradaB_MUX => pc_instruction,
+                 seletor_MUX => selector_mux,
                  saida_MUX => mux_to_pc);
 
-adder :  entity work.adder  generic map (larguraDados => 10)
-        port map( entradaA => "0000000001", entradaB =>  pc_to_rom_and_adder, saida => adder_to_mux);
+adder :  entity work.adder  generic map (larguraDados => 9)
+        port map( entradaA => "000000001", entradaB =>  pc_to_rom_and_adder, saida => adder_to_mux);
 		  
 end architecture;

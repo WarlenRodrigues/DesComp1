@@ -2,9 +2,9 @@ library IEEE;
 use IEEE.std_logic_1164.all;
 use ieee.numeric_std.all;
 
-entity rom is
+entity rom_cu is
    generic (
-          dataWidth: natural := 16;
+          dataWidth: natural := 17;
           addrWidth: natural := 10
     );
    port (
@@ -13,7 +13,7 @@ entity rom is
     );
 end entity;
 
-architecture rtl of rom is
+architecture rtl of rom_cu is
 
   type blocoMemoria is array(0 TO 2**addrWidth - 1) of std_logic_vector(dataWidth-1 DOWNTO 0);
 
@@ -21,17 +21,13 @@ architecture rtl of rom is
         return blocoMemoria is variable tmp : blocoMemoria := (others => (others => '0'));
   begin
         -- Inicializa os endereços:
-        tmp(0) := "0000" & "000" & "000000000"; -- Load for r7 mem [0x200]
-        tmp(1) := "0000" & "000" & "000000000"; -- Jump to line of the code [256]
-        tmp(2) := "0000" & "000" & "000000000";
-        tmp(3) := "0110" & "000" & "000000110"; -- JUMP
-        tmp(4) := "0000" & "000" & "000000000";
-        tmp(5) := "0000" & "000" & "000000000";
-        tmp(6) := "0000" & "000" & "000000000";
-        tmp(7) := "0111" & "000" & "000000010"; -- JE
-        tmp(8) := "0000" & "000" & "000000000";
-        tmp(9) := "0000" & "000" & "000000000";
-        tmp(10) := "0000" & "000" & "000000000";
+        tmp(0) := "0001" & "111" & "100000000"; -- Load for r7 mem [0x200]
+        tmp(1) := "1000" & "100" & "010000000"; -- Jump to line of the code [256]
+--        tmp(2) := x"43";
+--        tmp(3) := x"44";
+--        tmp(4) := x"45";
+--        tmp(5) := x"46";
+--        tmp(6) := x"47";
 --        tmp(256) := x"55";
         return tmp;
     end initMemory;

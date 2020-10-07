@@ -7,11 +7,11 @@ entity tristate is
   port (
     entry : in std_logic_vector((larguraDados-1) downto 0);
     state : in std_logic;
-    out_port : out std_logic_vector((larguraDados-1) downto 0)
+    out_ : out std_logic_vector((larguraDados-1) downto 0)
   );
 end entity;
 
 architecture rtl of tristate is
   begin
-    out_port <= entry when (state = '1') else "ZZZZZZZZ";
+    out_ <= entry when (state = '1') else 'Z';
 end architecture;
