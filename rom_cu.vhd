@@ -22,15 +22,15 @@ architecture rtl of rom_cu is
   begin
         -- Inicializa os endereços:
         tmp(0) := "0000000000"; -- Load for r7 mem [0x200]
-        tmp(1) := "0000000000"; -- Jump to line of the code [256]
---        tmp(2) := x"43";
---        tmp(3) := x"44";
---        tmp(4) := x"45";
---        tmp(5) := x"46";
-        tmp(6) := "1000000000"; -- JUMP 
+        tmp(1) := "0011011010"; -- LOAD
+        tmp(2) := "0011000110"; -- ADD
+        tmp(3) := "0011001110"; -- SUB
+        tmp(4) := "0011000110"; -- ADDI
+        tmp(5) := "0011001110"; -- SUBI
+        tmp(6) := "1000000100"; -- JUMP 
         tmp(7) := "0100000000"; -- JE
---        tmp(8) := x"55";
---        tmp(9) := x"55";
+        tmp(8) := "0011010101"; -- STORE
+        tmp(9) := "0011000110"; -- CMP
 --        tmp(10) := x"55";
 --        tmp(11) := x"55";
 --        tmp(12) := x"55";

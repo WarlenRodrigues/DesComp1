@@ -10,8 +10,10 @@ entity execution_operation is
 		  flip_flop_flag: out STD_LOGIC;
 		  control_points_pin : in STD_LOGIC_VECTOR(9 downto 0);
 		  data_in : in STD_LOGIC_VECTOR(7 downto 0);
-		  registers_out : out STD_LOGIC_VECTOR(7 downto 0)
-
+		  registers_out : out STD_LOGIC_VECTOR(7 downto 0);
+		  pintestA :  out STD_LOGIC_VECTOR(7 downto 0);
+		  pintestB :  out STD_LOGIC_VECTOR(7 downto 0);
+		  pintestFlagULA : out STD_LOGIC
     );
 end entity;
 
@@ -32,6 +34,9 @@ alias habilitate_flip_flop: STD_LOGIC is control_points_pin(2);
 begin
 imediate <= instruction(7 downto 0);
 registers_out <= registers_to_ula;
+pintestA <= registers_to_ula;
+pintestB <= mux_to_ula;
+pintestFlagULA <= flip_flop_enable;
 
 mux :  entity work.mux  generic map (larguraDados => 8)
         port map( entradaA_MUX => data_in, -- Barramento de dados: Entrada - IO In

@@ -6,7 +6,10 @@ entity clock is
     port
     (
 		  clock_50: in STD_LOGIC;
-		  pintest : out STD_LOGIC_VECTOR (8 downto 0)
+		  pintest : out STD_LOGIC_VECTOR (8 downto 0);
+		  pintestULAA : out STD_LOGIC_VECTOR(7 downto 0);
+		  pintestULAB: out STD_LOGIC_VECTOR(7 downto 0);
+		  pintestULAFLAG: out STD_LOGIC
     );
 end entity;
 
@@ -18,6 +21,10 @@ signal habilitate_read_mem : STD_LOGIC;
 signal habilitate_write_mem : STD_LOGIC;
 signal habilitates : STD_LOGIC_VECTOR(9 downto 0);
 signal out_pintest : STD_LOGIC_VECTOR(8 downto 0);
+
+signal pintestA : STD_LOGIC_VECTOR(7 downto 0);
+signal pintestB : STD_LOGIC_VECTOR(7 downto 0);
+signal pintestFlag: STD_LOGIC;
 
 alias decoder_to_ram : STD_LOGIC is habilitates(9);
 alias addresses_to_ram : STD_LOGIC_VECTOR (6 downto 0) is addresses(6 downto 0);
@@ -31,7 +38,10 @@ cpu : entity work.cpu port map (clock => clock_50,
 		  data_out => data_out,
 		  habilitate_read_mem => habilitate_read_mem,
 		  habilitate_write_mem => habilitate_write_mem,
-		  pintest => out_pintest
+		  pintest => out_pintest,
+		  pintestULAA => pintestULAA,
+		  pintestULAB => pintestULAB,
+		  pintestULAFLAG => pintestULAFLAG
 );
 
 ram : entity work.memRam

@@ -37,4 +37,5 @@ begin
             end if;
         end if;
     end process;
+	 saida <= registrador(to_integer(unsigned(endereco)));
 end architecture;

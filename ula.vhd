@@ -12,7 +12,8 @@ entity ULA is
       entradaA, entradaB:  in STD_LOGIC_VECTOR((larguraDados-1) downto 0);
       seletor:  in STD_LOGIC_VECTOR(2 downto 0);
       saida:    out STD_LOGIC_VECTOR((larguraDados-1) downto 0);
-      flagZero: out std_logic
+      flagZero: out std_logic;
+		pintestA, pintestB :  out STD_LOGIC_VECTOR((larguraDados-1) downto 0)
     );
 end entity;
 
@@ -33,6 +34,8 @@ architecture rtl of ULA is
       op_or     <= entradaA or entradaB;
       op_xor    <= entradaA xor entradaB;
       op_not    <= not entradaA;
+		pintestA <= entradaA;
+		pintestB <= entradaB;
 
       saida <= soma when (seletor = "000") else
           subtracao when (seletor = "001") else
