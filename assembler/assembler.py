@@ -18,7 +18,7 @@ class Assembler:
             parameters = self.code[line].split(" ")
             for parameter in parameters:
                 if ":" in parameter:
-                    self.functions[line] = parameter.replace(":", "")
+                    self.functions[parameter.replace(":", "")] = (bin(int(line))[2:].zfill(4))
 
         print(self.functions)
 
@@ -35,9 +35,14 @@ class Assembler:
                         parameters_list.append(self.opcodes[parameter])
                     elif parameter in self.registers:
                         parameters_list.append(self.registers[parameter])
+                    elif "0x" in parameter:
+                        parameters_list.append(bin(int(parameter.replace('0x', "")))[2:].zfill(4))
+                    elif "#" in parameter:
+                        parameters_list.append(bin(int(parameter.replace('#', "")))[2:].zfill(4))
+                    elif parameter in self.functions:
+                        parameters_list.append(self.functions[parameter])
             self.binary[line] = parameters_list
         print(self.binary)
-
 
 registers = {"R0": "000", "R1": "001", "R2": "010",
 "R3": "011", "R4": "100", "R5": "101", "R6": "110",
@@ -46,6 +51,7 @@ registers = {"R0": "000", "R1": "001", "R2": "010",
 opcodes = {"LOAD": "0001", "ADD": "0010", "ADDI": "0100",
 "STORE": "1000", "SUB": "0011", "SUBI": "0101", "JMP": "0110",
 "CMP": "1100", "JE": "0111"}
+
 
 assembler = Assembler(registers, opcodes)
 

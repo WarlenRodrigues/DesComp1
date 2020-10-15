@@ -16,7 +16,7 @@ entity ULA is
     );
 end entity;
 
-architecture rtl of ULA is
+architecture comportamento of ULA is
   constant zero : std_logic_vector(larguraDados-1 downto 0) := (others => '0');
 
    signal soma :      STD_LOGIC_VECTOR((larguraDados-1) downto 0);
@@ -44,6 +44,6 @@ architecture rtl of ULA is
           op_or when     (seletor = "111") else
           entradaA;      -- outra opcao: saida = entradaA
 
-      flagZero <= '1' when unsigned(entradaA) = unsigned(entradaB) else '0';
+      flagZero <= '1' when unsigned(saida) = unsigned(zero) else '0';
 
 end architecture;

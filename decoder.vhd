@@ -8,37 +8,27 @@ use IEEE.std_logic_1164.all;
 use ieee.numeric_std.all;
 
 entity decoder is
-   generic (
-          dataWidth: natural := 8;
-          addrWidth: natural := 3
-    );
    port (
-          Endereco : in std_logic_vector (addrWidth-1 DOWNTO 0);
-          Dado : out std_logic_vector (dataWidth-1 DOWNTO 0)
+		 Endereco : in std_logic_vector (7 DOWNTO 0);
+		 Dado : out std_logic_vector (9 DOWNTO 0)
     );
 end entity;
 
 architecture rtl of decoder is
 
-  type blocoMemoria is array(0 TO 2**addrWidth - 1) of std_logic_vector(dataWidth-1 DOWNTO 0);
 
-  function initMemory
-        return blocoMemoria is variable tmp : blocoMemoria := (others => (others => '0'));
-  begin
-        -- Inicializa os endereços:
-        tmp(0) := x"AA";
-        tmp(1) := x"42";
-        tmp(2) := x"43";
-        tmp(3) := x"44";
-        tmp(4) := x"45";
-        tmp(5) := x"46";
-        tmp(6) := x"47";
-        tmp(7) := x"55";
-        return tmp;
-    end initMemory;
+begin
 
-    signal memROM : blocoMemoria := initMemory;
-
-begin	
-Dado <= memROM (to_integer(unsigned(Endereco)));
+Dado <= "1000000000" when Endereco(7) = '1' else -- Bloco RAM
+		  "0000000001" when Endereco = "00000000" else -- Display 0
+		  "0000000010" when Endereco = "00000001" else -- Display 1
+		  "0000000100" when Endereco = "00000010" else -- Display 2
+		  "0000001000" when Endereco = "00000011" else -- Display 3
+		  "0000010000" when Endereco = "00000100" else -- Display 4
+		  "0000100000" when Endereco = "00000101" else -- Display 5
+		  "0001000000" when Endereco = "00000110" else -- Chaves
+		  "0010000000" when Endereco = "00000111" else -- Botoes
+		  "0100000000" when Endereco = "00001000" else -- Leds
+		  "0000000000";
+		  
 end architecture;

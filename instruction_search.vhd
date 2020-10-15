@@ -6,9 +6,10 @@ entity instruction_search is
     port
     (
 		  clock: in STD_LOGIC;
---		  mux_selector: in STD_LOGIC;
 		  instruction: out STD_LOGIC_VECTOR(15 downto 0);
-		  pintest: out STD_LOGIC_VECTOR(8 downto 0) -- TESTE TODO TIRAR
+		  flip_flop_flag : in STD_LOGIC;
+		  control_points_pin : out STD_LOGIC_VECTOR(9 downto 0);
+		  pintest : out STD_LOGIC_VECTOR (8 downto 0)
     );
 end entity;
 
@@ -20,7 +21,6 @@ signal pc_instruction: STD_LOGIC_VECTOR(8 downto 0);
 signal on_instruction: STD_LOGIC_VECTOR(15 downto 0);
 signal control_points: STD_LOGIC_VECTOR(9 downto 0);
 signal selector_mux: STD_LOGIC;
-signal flip_flop_flag: STD_LOGIC;
 
 --signal pc_instruction <= instruction
 
@@ -31,9 +31,9 @@ alias je: STD_LOGIC is control_points(8);
 begin
 	 pc_instruction <= on_instruction(8 downto 0);
 	 instruction <= on_instruction;
-	 pintest <= pc_to_rom_and_adder; -- TESTE TODO TIRAR
-	 flip_flop_flag <= '0';
 	 selector_mux <= (je and flip_flop_flag) or jump;
+	 control_points_pin <= control_points;
+	 pintest <= pc_to_rom_and_adder;
 	 
 rom : entity work.rom   generic map (dataWidth => 16, addrWidth => 9)
           port map (Endereco => pc_to_rom_and_adder, Dado => on_instruction);
