@@ -44,7 +44,7 @@ control_unit : entity work.rom_cu   generic map (dataWidth => 10, addrWidth => 4
 pc : entity work.generic_register   generic map (larguraDados => 9)
           port map (DIN => mux_to_pc, DOUT => pc_to_rom_and_adder, ENABLE => '1', CLK => clock, RST => '0');
 
-mux :  entity work.mux  generic map (larguraDados => 9)
+mux1 :  entity work.muxgenerico  generic map (larguraDados => 9)
         port map( entradaA_MUX => adder_to_mux,
                  entradaB_MUX => pc_instruction,
                  seletor_MUX => selector_mux,

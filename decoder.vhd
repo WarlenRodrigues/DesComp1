@@ -16,7 +16,6 @@ end entity;
 
 architecture rtl of decoder is
 
-
 begin
 
 Dado <= "1000000000" when Endereco(7) = '1' else -- Bloco RAM

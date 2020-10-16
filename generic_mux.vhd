@@ -1,7 +1,7 @@
 library ieee;
 use ieee.std_logic_1164.all;
 
-entity mux is
+entity muxgenerico is
   -- Total de bits das entradas e saidas
   -- Data length is about next instruction address.
   generic ( larguraDados : natural := 10);
@@ -12,7 +12,7 @@ entity mux is
   );
 end entity;
 
-architecture rtl of mux is
+architecture rtl of muxgenerico is
   begin
     saida_MUX <= entradaB_MUX when (seletor_MUX = '1') else entradaA_MUX;
 end architecture;

@@ -1,0 +1,32 @@
+Quartus Prime Archive log --	/home/felipe/Documents/insper/descomp/projeto1-descomp/projeto1-descomp.qarlog
+
+Archive:	/home/felipe/Documents/insper/descomp/projeto1-descomp/projeto1-descomp.qar
+Date:		Fri Oct 16 13:02:17 2020
+Quartus Prime		20.1.0 Build 711 06/05/2020 SJ Lite Edition
+
+	=========== Files Selected: ===========
+/home/felipe/Documents/insper/descomp/projeto1-descomp/Waveform1.vwf
+/home/felipe/Documents/insper/descomp/projeto1-descomp/Waveform2.vwf
+/home/felipe/Documents/insper/descomp/projeto1-descomp/adder.vhd
+/home/felipe/Documents/insper/descomp/projeto1-descomp/clock.vhd
+/home/felipe/Documents/insper/descomp/projeto1-descomp/cpu.vhd
+/home/felipe/Documents/insper/descomp/projeto1-descomp/decoder.vhd
+/home/felipe/Documents/insper/descomp/projeto1-descomp/execution_operation.vhd
+/home/felipe/Documents/insper/descomp/projeto1-descomp/flipflop.vhd
+/home/felipe/Documents/insper/descomp/projeto1-descomp/generic_register.vhd
+/home/felipe/Documents/insper/descomp/projeto1-descomp/instruction_search.vhd
+/home/felipe/Documents/insper/descomp/projeto1-descomp/memRam.vhd
+/home/felipe/Documents/insper/descomp/projeto1-descomp/muxgenerico.vhd
+/home/felipe/Documents/insper/descomp/projeto1-descomp/projeto1-descomp.qpf
+/home/felipe/Documents/insper/descomp/projeto1-descomp/projeto1-descomp.qsf
+/home/felipe/Documents/insper/descomp/projeto1-descomp/ram.vhd
+/home/felipe/Documents/insper/descomp/projeto1-descomp/register_bank.vhd
+/home/felipe/Documents/insper/descomp/projeto1-descomp/rom.vhd
+/home/felipe/Documents/insper/descomp/projeto1-descomp/rom_cu.vhd
+/home/felipe/Documents/insper/descomp/projeto1-descomp/tristate.vhd
+/home/felipe/Documents/insper/descomp/projeto1-descomp/ula.vhd
+/home/felipe/intelFPGA_lite/20.1/quartus/linux64/assignment_defaults.qdf
+	======= Total: 21 files to archive =======
+
+	================ Status: ===============
+All files archived successfully.
