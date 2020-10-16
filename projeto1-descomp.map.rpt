@@ -1,0 +1,594 @@
+Analysis & Synthesis report for projeto1-descomp
+Fri Oct 16 11:54:43 2020
+Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. Registers Removed During Synthesis
+  9. General Register Statistics
+ 10. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 11. Parameter Settings for User Entity Instance: cpu:cpu|instruction_search:instruction_search|rom:rom
+ 12. Parameter Settings for User Entity Instance: cpu:cpu|instruction_search:instruction_search|rom_cu:control_unit
+ 13. Parameter Settings for User Entity Instance: cpu:cpu|instruction_search:instruction_search|generic_register:pc
+ 14. Parameter Settings for User Entity Instance: cpu:cpu|instruction_search:instruction_search|mux:mux
+ 15. Parameter Settings for User Entity Instance: cpu:cpu|instruction_search:instruction_search|adder:adder
+ 16. Parameter Settings for User Entity Instance: cpu:cpu|execution_operation:execution_operation|mux:mux
+ 17. Parameter Settings for User Entity Instance: cpu:cpu|execution_operation:execution_operation|ULA:ula
+ 18. Parameter Settings for User Entity Instance: cpu:cpu|execution_operation:execution_operation|register_bank:registers
+ 19. Parameter Settings for User Entity Instance: memRam:ram
+ 20. Port Connectivity Checks: "decoder:decoder"
+ 21. Port Connectivity Checks: "memRam:ram"
+ 22. Port Connectivity Checks: "cpu:cpu|execution_operation:execution_operation|flipflop:flipflop"
+ 23. Port Connectivity Checks: "cpu:cpu|execution_operation:execution_operation|ULA:ula"
+ 24. Port Connectivity Checks: "cpu:cpu|instruction_search:instruction_search|adder:adder"
+ 25. Port Connectivity Checks: "cpu:cpu|instruction_search:instruction_search|generic_register:pc"
+ 26. Port Connectivity Checks: "cpu:cpu"
+ 27. Post-Synthesis Netlist Statistics for Top Partition
+ 28. Elapsed Time Per Partition
+ 29. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2020  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and any partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details, at
+https://fpgasoftware.intel.com/eula.
+
+
+
++-------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                  ;
++---------------------------------+---------------------------------------------+
+; Analysis & Synthesis Status     ; Successful - Fri Oct 16 11:54:43 2020       ;
+; Quartus Prime Version           ; 20.1.0 Build 711 06/05/2020 SJ Lite Edition ;
+; Revision Name                   ; projeto1-descomp                            ;
+; Top-level Entity Name           ; clock                                       ;
+; Family                          ; Cyclone V                                   ;
+; Logic utilization (in ALMs)     ; N/A                                         ;
+; Total registers                 ; 18                                          ;
+; Total pins                      ; 27                                          ;
+; Total virtual pins              ; 0                                           ;
+; Total block memory bits         ; 0                                           ;
+; Total DSP Blocks                ; 0                                           ;
+; Total HSSI RX PCSs              ; 0                                           ;
+; Total HSSI PMA RX Deserializers ; 0                                           ;
+; Total HSSI TX PCSs              ; 0                                           ;
+; Total HSSI PMA TX Serializers   ; 0                                           ;
+; Total PLLs                      ; 0                                           ;
+; Total DLLs                      ; 0                                           ;
++---------------------------------+---------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                             ;
++---------------------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                                          ; Setting            ; Default Value      ;
++---------------------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                                          ; 5CGXFC7C7F23C8     ;                    ;
+; Top-level entity name                                                           ; clock              ; projeto1-descomp   ;
+; Family name                                                                     ; Cyclone V          ; Cyclone V          ;
+; Use smart compilation                                                           ; Off                ; Off                ;
+; Enable parallel Assembler and Timing Analyzer during compilation                ; On                 ; On                 ;
+; Enable compact report table                                                     ; Off                ; Off                ;
+; Restructure Multiplexers                                                        ; Auto               ; Auto               ;
+; MLAB Add Timing Constraints For Mixed-Port Feed-Through Mode Setting Don't Care ; Off                ; Off                ;
+; Create Debugging Nodes for IP Cores                                             ; Off                ; Off                ;
+; Preserve fewer node names                                                       ; On                 ; On                 ;
+; Intel FPGA IP Evaluation Mode                                                   ; Enable             ; Enable             ;
+; Verilog Version                                                                 ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                                    ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                                        ; Auto               ; Auto               ;
+; Safe State Machine                                                              ; Off                ; Off                ;
+; Extract Verilog State Machines                                                  ; On                 ; On                 ;
+; Extract VHDL State Machines                                                     ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                               ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                                      ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                                  ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                                         ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                                       ; On                 ; On                 ;
+; Parallel Synthesis                                                              ; On                 ; On                 ;
+; DSP Block Balancing                                                             ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                                              ; On                 ; On                 ;
+; Power-Up Don't Care                                                             ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                                    ; Off                ; Off                ;
+; Remove Duplicate Registers                                                      ; On                 ; On                 ;
+; Ignore CARRY Buffers                                                            ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                                          ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                                           ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                       ; Off                ; Off                ;
+; Ignore LCELL Buffers                                                            ; Off                ; Off                ;
+; Ignore SOFT Buffers                                                             ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                                  ; Off                ; Off                ;
+; Optimization Technique                                                          ; Balanced           ; Balanced           ;
+; Carry Chain Length                                                              ; 70                 ; 70                 ;
+; Auto Carry Chains                                                               ; On                 ; On                 ;
+; Auto Open-Drain Pins                                                            ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                           ; Off                ; Off                ;
+; Auto ROM Replacement                                                            ; On                 ; On                 ;
+; Auto RAM Replacement                                                            ; On                 ; On                 ;
+; Auto DSP Block Replacement                                                      ; On                 ; On                 ;
+; Auto Shift Register Replacement                                                 ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                                 ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                                   ; On                 ; On                 ;
+; Strict RAM Replacement                                                          ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                               ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                                          ; Off                ; Off                ;
+; Auto Resource Sharing                                                           ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                                              ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                                              ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                                   ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing                             ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                               ; Off                ; Off                ;
+; Timing-Driven Synthesis                                                         ; On                 ; On                 ;
+; Report Parameter Settings                                                       ; On                 ; On                 ;
+; Report Source Assignments                                                       ; On                 ; On                 ;
+; Report Connectivity Checks                                                      ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                              ; Off                ; Off                ;
+; Synchronization Register Chain Length                                           ; 3                  ; 3                  ;
+; Power Optimization During Synthesis                                             ; Normal compilation ; Normal compilation ;
+; HDL message level                                                               ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                                 ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                        ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report                              ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report                       ; 100                ; 100                ;
+; Clock MUX Protection                                                            ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                                     ; Off                ; Off                ;
+; Block Design Naming                                                             ; Auto               ; Auto               ;
+; SDC constraint protection                                                       ; Off                ; Off                ;
+; Synthesis Effort                                                                ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal                    ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                                            ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                                              ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                                     ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                                          ; On                 ; On                 ;
+; Automatic Parallel Synthesis                                                    ; On                 ; On                 ;
+; Partial Reconfiguration Bitstream ID                                            ; Off                ; Off                ;
++---------------------------------------------------------------------------------+--------------------+--------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 8           ;
+; Maximum allowed            ; 4           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 4           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processor 2            ;   0.0%      ;
+;     Processors 3-4         ;   0.0%      ;
++----------------------------+-------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                          ;
++----------------------------------+-----------------+-----------------+--------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                                                   ; Library ;
++----------------------------------+-----------------+-----------------+--------------------------------------------------------------------------------+---------+
+; ula.vhd                          ; yes             ; User VHDL File  ; /home/felipe/Documents/insper/descomp/projeto1-descomp/ula.vhd                 ;         ;
+; rom_cu.vhd                       ; yes             ; User VHDL File  ; /home/felipe/Documents/insper/descomp/projeto1-descomp/rom_cu.vhd              ;         ;
+; rom.vhd                          ; yes             ; User VHDL File  ; /home/felipe/Documents/insper/descomp/projeto1-descomp/rom.vhd                 ;         ;
+; register_bank.vhd                ; yes             ; User VHDL File  ; /home/felipe/Documents/insper/descomp/projeto1-descomp/register_bank.vhd       ;         ;
+; mux.vhd                          ; yes             ; User VHDL File  ; /home/felipe/Documents/insper/descomp/projeto1-descomp/mux.vhd                 ;         ;
+; memRam.vhd                       ; yes             ; User VHDL File  ; /home/felipe/Documents/insper/descomp/projeto1-descomp/memRam.vhd              ;         ;
+; instruction_search.vhd           ; yes             ; User VHDL File  ; /home/felipe/Documents/insper/descomp/projeto1-descomp/instruction_search.vhd  ;         ;
+; generic_register.vhd             ; yes             ; User VHDL File  ; /home/felipe/Documents/insper/descomp/projeto1-descomp/generic_register.vhd    ;         ;
+; flipflop.vhd                     ; yes             ; User VHDL File  ; /home/felipe/Documents/insper/descomp/projeto1-descomp/flipflop.vhd            ;         ;
+; execution_operation.vhd          ; yes             ; User VHDL File  ; /home/felipe/Documents/insper/descomp/projeto1-descomp/execution_operation.vhd ;         ;
+; decoder.vhd                      ; yes             ; User VHDL File  ; /home/felipe/Documents/insper/descomp/projeto1-descomp/decoder.vhd             ;         ;
+; cpu.vhd                          ; yes             ; User VHDL File  ; /home/felipe/Documents/insper/descomp/projeto1-descomp/cpu.vhd                 ;         ;
+; clock.vhd                        ; yes             ; User VHDL File  ; /home/felipe/Documents/insper/descomp/projeto1-descomp/clock.vhd               ;         ;
+; adder.vhd                        ; yes             ; User VHDL File  ; /home/felipe/Documents/insper/descomp/projeto1-descomp/adder.vhd               ;         ;
++----------------------------------+-----------------+-----------------+--------------------------------------------------------------------------------+---------+
+
+
++--------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                                                                  ;
++---------------------------------------------+----------------------------------------------------------------+
+; Resource                                    ; Usage                                                          ;
++---------------------------------------------+----------------------------------------------------------------+
+; Estimate of Logic utilization (ALMs needed) ; 32                                                             ;
+;                                             ;                                                                ;
+; Combinational ALUT usage for logic          ; 60                                                             ;
+;     -- 7 input functions                    ; 0                                                              ;
+;     -- 6 input functions                    ; 3                                                              ;
+;     -- 5 input functions                    ; 19                                                             ;
+;     -- 4 input functions                    ; 7                                                              ;
+;     -- <=3 input functions                  ; 31                                                             ;
+;                                             ;                                                                ;
+; Dedicated logic registers                   ; 18                                                             ;
+;                                             ;                                                                ;
+; I/O pins                                    ; 27                                                             ;
+;                                             ;                                                                ;
+; Total DSP Blocks                            ; 0                                                              ;
+;                                             ;                                                                ;
+; Maximum fan-out node                        ; cpu:cpu|instruction_search:instruction_search|rom:rom|memROM~1 ;
+; Maximum fan-out                             ; 23                                                             ;
+; Total fan-out                               ; 349                                                            ;
+; Average fan-out                             ; 2.64                                                           ;
++---------------------------------------------+----------------------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                            ;
++-------------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+--------------------------------------------------------------------------------+---------------------+--------------+
+; Compilation Hierarchy Node                      ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                                            ; Entity Name         ; Library Name ;
++-------------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+--------------------------------------------------------------------------------+---------------------+--------------+
+; |clock                                          ; 60 (1)              ; 18 (0)                    ; 0                 ; 0          ; 27   ; 0            ; |clock                                                                         ; clock               ; work         ;
+;    |cpu:cpu|                                    ; 59 (0)              ; 18 (0)                    ; 0                 ; 0          ; 0    ; 0            ; |clock|cpu:cpu                                                                 ; cpu                 ; work         ;
+;       |execution_operation:execution_operation| ; 37 (0)              ; 9 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |clock|cpu:cpu|execution_operation:execution_operation                         ; execution_operation ; work         ;
+;          |ULA:ula|                              ; 27 (27)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |clock|cpu:cpu|execution_operation:execution_operation|ULA:ula                 ; ULA                 ; work         ;
+;          |flipflop:flipflop|                    ; 1 (1)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |clock|cpu:cpu|execution_operation:execution_operation|flipflop:flipflop       ; flipflop            ; work         ;
+;          |register_bank:registers|              ; 9 (9)               ; 8 (8)                     ; 0                 ; 0          ; 0    ; 0            ; |clock|cpu:cpu|execution_operation:execution_operation|register_bank:registers ; register_bank       ; work         ;
+;       |instruction_search:instruction_search|   ; 22 (1)              ; 9 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |clock|cpu:cpu|instruction_search:instruction_search                           ; instruction_search  ; work         ;
+;          |adder:adder|                          ; 9 (9)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |clock|cpu:cpu|instruction_search:instruction_search|adder:adder               ; adder               ; work         ;
+;          |generic_register:pc|                  ; 0 (0)               ; 9 (9)                     ; 0                 ; 0          ; 0    ; 0            ; |clock|cpu:cpu|instruction_search:instruction_search|generic_register:pc       ; generic_register    ; work         ;
+;          |rom:rom|                              ; 10 (10)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |clock|cpu:cpu|instruction_search:instruction_search|rom:rom                   ; rom                 ; work         ;
+;          |rom_cu:control_unit|                  ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |clock|cpu:cpu|instruction_search:instruction_search|rom_cu:control_unit       ; rom_cu              ; work         ;
++-------------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+--------------------------------------------------------------------------------+---------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++-------------------------------------------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                                                            ;
++----------------------------------------------------------------------------------------+--------------------------------------+
+; Register name                                                                          ; Reason for Removal                   ;
++----------------------------------------------------------------------------------------+--------------------------------------+
+; cpu:cpu|execution_operation:execution_operation|register_bank:registers|registrador~12 ; Stuck at GND due to stuck port clock ;
+; cpu:cpu|execution_operation:execution_operation|register_bank:registers|registrador~13 ; Stuck at GND due to stuck port clock ;
+; cpu:cpu|execution_operation:execution_operation|register_bank:registers|registrador~14 ; Stuck at GND due to stuck port clock ;
+; cpu:cpu|execution_operation:execution_operation|register_bank:registers|registrador~15 ; Stuck at GND due to stuck port clock ;
+; cpu:cpu|execution_operation:execution_operation|register_bank:registers|registrador~16 ; Stuck at GND due to stuck port clock ;
+; cpu:cpu|execution_operation:execution_operation|register_bank:registers|registrador~17 ; Stuck at GND due to stuck port clock ;
+; cpu:cpu|execution_operation:execution_operation|register_bank:registers|registrador~18 ; Stuck at GND due to stuck port clock ;
+; cpu:cpu|execution_operation:execution_operation|register_bank:registers|registrador~19 ; Stuck at GND due to stuck port clock ;
+; Total Number of Removed Registers = 8                                                  ;                                      ;
++----------------------------------------------------------------------------------------+--------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 18    ;
+; Number of registers using Synchronous Clear  ; 0     ;
+; Number of registers using Synchronous Load   ; 17    ;
+; Number of registers using Asynchronous Clear ; 1     ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 8     ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                                            ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                                  ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------------------------+
+; 1:1                ; 4 bits    ; 0 LEs         ; 0 LEs                ; 0 LEs                  ; No         ; |clock|cpu:cpu|execution_operation:execution_operation|mux:mux|saida_MUX[0] ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; No         ; |clock|cpu:cpu|execution_operation:execution_operation|ULA:ula|saida[0]     ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: cpu:cpu|instruction_search:instruction_search|rom:rom ;
++----------------+-------+---------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                      ;
++----------------+-------+---------------------------------------------------------------------------+
+; datawidth      ; 16    ; Signed Integer                                                            ;
+; addrwidth      ; 9     ; Signed Integer                                                            ;
++----------------+-------+---------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: cpu:cpu|instruction_search:instruction_search|rom_cu:control_unit ;
++----------------+-------+---------------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                                  ;
++----------------+-------+---------------------------------------------------------------------------------------+
+; datawidth      ; 10    ; Signed Integer                                                                        ;
+; addrwidth      ; 4     ; Signed Integer                                                                        ;
++----------------+-------+---------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: cpu:cpu|instruction_search:instruction_search|generic_register:pc ;
++----------------+-------+---------------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                                  ;
++----------------+-------+---------------------------------------------------------------------------------------+
+; larguradados   ; 9     ; Signed Integer                                                                        ;
++----------------+-------+---------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: cpu:cpu|instruction_search:instruction_search|mux:mux ;
++----------------+-------+---------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                      ;
++----------------+-------+---------------------------------------------------------------------------+
+; larguradados   ; 9     ; Signed Integer                                                            ;
++----------------+-------+---------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: cpu:cpu|instruction_search:instruction_search|adder:adder ;
++----------------+-------+-------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                          ;
++----------------+-------+-------------------------------------------------------------------------------+
+; larguradados   ; 9     ; Signed Integer                                                                ;
++----------------+-------+-------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: cpu:cpu|execution_operation:execution_operation|mux:mux ;
++----------------+-------+-----------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                        ;
++----------------+-------+-----------------------------------------------------------------------------+
+; larguradados   ; 8     ; Signed Integer                                                              ;
++----------------+-------+-----------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: cpu:cpu|execution_operation:execution_operation|ULA:ula ;
++----------------+-------+-----------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                        ;
++----------------+-------+-----------------------------------------------------------------------------+
+; larguradados   ; 8     ; Signed Integer                                                              ;
++----------------+-------+-----------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: cpu:cpu|execution_operation:execution_operation|register_bank:registers ;
++---------------------+-------+----------------------------------------------------------------------------------------+
+; Parameter Name      ; Value ; Type                                                                                   ;
++---------------------+-------+----------------------------------------------------------------------------------------+
+; larguradados        ; 8     ; Signed Integer                                                                         ;
+; larguraendbancoregs ; 3     ; Signed Integer                                                                         ;
++---------------------+-------+----------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------+
+; Parameter Settings for User Entity Instance: memRam:ram ;
++----------------+-------+--------------------------------+
+; Parameter Name ; Value ; Type                           ;
++----------------+-------+--------------------------------+
+; datawidth      ; 8     ; Signed Integer                 ;
+; addrwidth      ; 7     ; Signed Integer                 ;
++----------------+-------+--------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "decoder:decoder"                                                                          ;
++------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port       ; Type   ; Severity ; Details                                                                             ;
++------------+--------+----------+-------------------------------------------------------------------------------------+
+; dado[8..0] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++------------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "memRam:ram"                                                                             ;
++----------+--------+----------+-------------------------------------------------------------------------------------+
+; Port     ; Type   ; Severity ; Details                                                                             ;
++----------+--------+----------+-------------------------------------------------------------------------------------+
+; dado_out ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++----------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "cpu:cpu|execution_operation:execution_operation|flipflop:flipflop" ;
++------+-------+----------+---------------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                             ;
++------+-------+----------+---------------------------------------------------------------------+
+; din  ; Input ; Info     ; Stuck at VCC                                                        ;
++------+-------+----------+---------------------------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "cpu:cpu|execution_operation:execution_operation|ULA:ula"                                ;
++----------+--------+----------+-------------------------------------------------------------------------------------+
+; Port     ; Type   ; Severity ; Details                                                                             ;
++----------+--------+----------+-------------------------------------------------------------------------------------+
+; pintesta ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; pintestb ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++----------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "cpu:cpu|instruction_search:instruction_search|adder:adder" ;
++----------------+-------+----------+---------------------------------------------------+
+; Port           ; Type  ; Severity ; Details                                           ;
++----------------+-------+----------+---------------------------------------------------+
+; entradaa[8..1] ; Input ; Info     ; Stuck at GND                                      ;
+; entradaa[0]    ; Input ; Info     ; Stuck at VCC                                      ;
++----------------+-------+----------+---------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "cpu:cpu|instruction_search:instruction_search|generic_register:pc" ;
++--------+-------+----------+-------------------------------------------------------------------+
+; Port   ; Type  ; Severity ; Details                                                           ;
++--------+-------+----------+-------------------------------------------------------------------+
+; enable ; Input ; Info     ; Stuck at VCC                                                      ;
+; rst    ; Input ; Info     ; Stuck at GND                                                      ;
++--------+-------+----------+-------------------------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "cpu:cpu"                                                                                ;
++----------+--------+----------+-------------------------------------------------------------------------------------+
+; Port     ; Type   ; Severity ; Details                                                                             ;
++----------+--------+----------+-------------------------------------------------------------------------------------+
+; data_out ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++----------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; arriav_ff             ; 18                          ;
+;     CLR               ; 1                           ;
+;     ENA SLD           ; 8                           ;
+;     SLD               ; 9                           ;
+; arriav_lcell_comb     ; 60                          ;
+;     arith             ; 18                          ;
+;         1 data inputs ; 9                           ;
+;         4 data inputs ; 2                           ;
+;         5 data inputs ; 7                           ;
+;     normal            ; 42                          ;
+;         0 data inputs ; 1                           ;
+;         2 data inputs ; 8                           ;
+;         3 data inputs ; 13                          ;
+;         4 data inputs ; 5                           ;
+;         5 data inputs ; 12                          ;
+;         6 data inputs ; 3                           ;
+; boundary_port         ; 27                          ;
+;                       ;                             ;
+; Max LUT depth         ; 4.00                        ;
+; Average LUT depth     ; 3.05                        ;
++-----------------------+-----------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:00     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Analysis & Synthesis
+    Info: Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
+    Info: Processing started: Fri Oct 16 11:54:32 2020
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off projeto1-descomp -c projeto1-descomp
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
+Info (12021): Found 2 design units, including 1 entities, in source file ula.vhd
+    Info (12022): Found design unit 1: ULA-rtl File: /home/felipe/Documents/insper/descomp/projeto1-descomp/ula.vhd Line: 20
+    Info (12023): Found entity 1: ULA File: /home/felipe/Documents/insper/descomp/projeto1-descomp/ula.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file tristate.vhd
+    Info (12022): Found design unit 1: tristate-rtl File: /home/felipe/Documents/insper/descomp/projeto1-descomp/tristate.vhd Line: 14
+    Info (12023): Found entity 1: tristate File: /home/felipe/Documents/insper/descomp/projeto1-descomp/tristate.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file rom_cu.vhd
+    Info (12022): Found design unit 1: rom_cu-rtl File: /home/felipe/Documents/insper/descomp/projeto1-descomp/rom_cu.vhd Line: 16
+    Info (12023): Found entity 1: rom_cu File: /home/felipe/Documents/insper/descomp/projeto1-descomp/rom_cu.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file rom.vhd
+    Info (12022): Found design unit 1: rom-rtl File: /home/felipe/Documents/insper/descomp/projeto1-descomp/rom.vhd Line: 16
+    Info (12023): Found entity 1: rom File: /home/felipe/Documents/insper/descomp/projeto1-descomp/rom.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file register_bank.vhd
+    Info (12022): Found design unit 1: register_bank-rtl File: /home/felipe/Documents/insper/descomp/projeto1-descomp/register_bank.vhd Line: 23
+    Info (12023): Found entity 1: register_bank File: /home/felipe/Documents/insper/descomp/projeto1-descomp/register_bank.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file ram.vhd
+    Info (12022): Found design unit 1: memoriaRAM-rtl File: /home/felipe/Documents/insper/descomp/projeto1-descomp/ram.vhd Line: 21
+    Info (12023): Found entity 1: memoriaRAM File: /home/felipe/Documents/insper/descomp/projeto1-descomp/ram.vhd Line: 5
+Warning (12090): Entity "mux" obtained from "mux.vhd" instead of from Quartus Prime megafunction library File: /home/felipe/Documents/insper/descomp/projeto1-descomp/mux.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file mux.vhd
+    Info (12022): Found design unit 1: mux-rtl File: /home/felipe/Documents/insper/descomp/projeto1-descomp/mux.vhd Line: 15
+    Info (12023): Found entity 1: mux File: /home/felipe/Documents/insper/descomp/projeto1-descomp/mux.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file memRam.vhd
+    Info (12022): Found design unit 1: memRam-rtl File: /home/felipe/Documents/insper/descomp/projeto1-descomp/memRam.vhd Line: 21
+    Info (12023): Found entity 1: memRam File: /home/felipe/Documents/insper/descomp/projeto1-descomp/memRam.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file instruction_search.vhd
+    Info (12022): Found design unit 1: instruction_search-rtl File: /home/felipe/Documents/insper/descomp/projeto1-descomp/instruction_search.vhd Line: 16
+    Info (12023): Found entity 1: instruction_search File: /home/felipe/Documents/insper/descomp/projeto1-descomp/instruction_search.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file generic_register.vhd
+    Info (12022): Found design unit 1: generic_register-rtl File: /home/felipe/Documents/insper/descomp/projeto1-descomp/generic_register.vhd Line: 15
+    Info (12023): Found entity 1: generic_register File: /home/felipe/Documents/insper/descomp/projeto1-descomp/generic_register.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file flipflop.vhd
+    Info (12022): Found design unit 1: flipflop-rtl File: /home/felipe/Documents/insper/descomp/projeto1-descomp/flipflop.vhd Line: 12
+    Info (12023): Found entity 1: flipflop File: /home/felipe/Documents/insper/descomp/projeto1-descomp/flipflop.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file execution_operation.vhd
+    Info (12022): Found design unit 1: execution_operation-rtl File: /home/felipe/Documents/insper/descomp/projeto1-descomp/execution_operation.vhd Line: 20
+    Info (12023): Found entity 1: execution_operation File: /home/felipe/Documents/insper/descomp/projeto1-descomp/execution_operation.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file decoder.vhd
+    Info (12022): Found design unit 1: decoder-rtl File: /home/felipe/Documents/insper/descomp/projeto1-descomp/decoder.vhd Line: 17
+    Info (12023): Found entity 1: decoder File: /home/felipe/Documents/insper/descomp/projeto1-descomp/decoder.vhd Line: 10
+Info (12021): Found 2 design units, including 1 entities, in source file cpu.vhd
+    Info (12022): Found design unit 1: cpu-rtl File: /home/felipe/Documents/insper/descomp/projeto1-descomp/cpu.vhd Line: 21
+    Info (12023): Found entity 1: cpu File: /home/felipe/Documents/insper/descomp/projeto1-descomp/cpu.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file clock.vhd
+    Info (12022): Found design unit 1: clock-rtl File: /home/felipe/Documents/insper/descomp/projeto1-descomp/clock.vhd Line: 16
+    Info (12023): Found entity 1: clock File: /home/felipe/Documents/insper/descomp/projeto1-descomp/clock.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file adder.vhd
+    Info (12022): Found design unit 1: adder-rtl File: /home/felipe/Documents/insper/descomp/projeto1-descomp/adder.vhd Line: 19
+    Info (12023): Found entity 1: adder File: /home/felipe/Documents/insper/descomp/projeto1-descomp/adder.vhd Line: 5
+Info (12127): Elaborating entity "clock" for the top level hierarchy
+Warning (10541): VHDL Signal Declaration warning at clock.vhd(17): used implicit default value for signal "data_in" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: /home/felipe/Documents/insper/descomp/projeto1-descomp/clock.vhd Line: 17
+Warning (10036): Verilog HDL or VHDL warning at clock.vhd(19): object "data_out" assigned a value but never read File: /home/felipe/Documents/insper/descomp/projeto1-descomp/clock.vhd Line: 19
+Info (12128): Elaborating entity "cpu" for hierarchy "cpu:cpu" File: /home/felipe/Documents/insper/descomp/projeto1-descomp/clock.vhd Line: 35
+Info (12128): Elaborating entity "instruction_search" for hierarchy "cpu:cpu|instruction_search:instruction_search" File: /home/felipe/Documents/insper/descomp/projeto1-descomp/cpu.vhd Line: 41
+Info (12128): Elaborating entity "rom" for hierarchy "cpu:cpu|instruction_search:instruction_search|rom:rom" File: /home/felipe/Documents/insper/descomp/projeto1-descomp/instruction_search.vhd Line: 38
+Info (12128): Elaborating entity "rom_cu" for hierarchy "cpu:cpu|instruction_search:instruction_search|rom_cu:control_unit" File: /home/felipe/Documents/insper/descomp/projeto1-descomp/instruction_search.vhd Line: 41
+Info (12128): Elaborating entity "generic_register" for hierarchy "cpu:cpu|instruction_search:instruction_search|generic_register:pc" File: /home/felipe/Documents/insper/descomp/projeto1-descomp/instruction_search.vhd Line: 44
+Info (12128): Elaborating entity "mux" for hierarchy "cpu:cpu|instruction_search:instruction_search|mux:mux" File: /home/felipe/Documents/insper/descomp/projeto1-descomp/instruction_search.vhd Line: 47
+Info (12128): Elaborating entity "adder" for hierarchy "cpu:cpu|instruction_search:instruction_search|adder:adder" File: /home/felipe/Documents/insper/descomp/projeto1-descomp/instruction_search.vhd Line: 53
+Info (12128): Elaborating entity "execution_operation" for hierarchy "cpu:cpu|execution_operation:execution_operation" File: /home/felipe/Documents/insper/descomp/projeto1-descomp/cpu.vhd Line: 48
+Info (12128): Elaborating entity "mux" for hierarchy "cpu:cpu|execution_operation:execution_operation|mux:mux" File: /home/felipe/Documents/insper/descomp/projeto1-descomp/execution_operation.vhd Line: 41
+Info (12128): Elaborating entity "ULA" for hierarchy "cpu:cpu|execution_operation:execution_operation|ULA:ula" File: /home/felipe/Documents/insper/descomp/projeto1-descomp/execution_operation.vhd Line: 47
+Info (12128): Elaborating entity "register_bank" for hierarchy "cpu:cpu|execution_operation:execution_operation|register_bank:registers" File: /home/felipe/Documents/insper/descomp/projeto1-descomp/execution_operation.vhd Line: 50
+Info (12128): Elaborating entity "flipflop" for hierarchy "cpu:cpu|execution_operation:execution_operation|flipflop:flipflop" File: /home/felipe/Documents/insper/descomp/projeto1-descomp/execution_operation.vhd Line: 57
+Info (12128): Elaborating entity "memRam" for hierarchy "memRam:ram" File: /home/felipe/Documents/insper/descomp/projeto1-descomp/clock.vhd Line: 47
+Info (12128): Elaborating entity "decoder" for hierarchy "decoder:decoder" File: /home/felipe/Documents/insper/descomp/projeto1-descomp/clock.vhd Line: 50
+Info (276014): Found 2 instances of uninferred RAM logic
+    Info (276007): RAM logic "cpu:cpu|execution_operation:execution_operation|register_bank:registers|registrador" is uninferred due to asynchronous read logic File: /home/felipe/Documents/insper/descomp/projeto1-descomp/register_bank.vhd Line: 29
+    Info (276004): RAM logic "cpu:cpu|instruction_search:instruction_search|rom_cu:control_unit|memROM" is uninferred due to inappropriate RAM size File: /home/felipe/Documents/insper/descomp/projeto1-descomp/rom_cu.vhd Line: 43
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "pintestULAB[4]" is stuck at GND File: /home/felipe/Documents/insper/descomp/projeto1-descomp/clock.vhd Line: 11
+    Warning (13410): Pin "pintestULAB[5]" is stuck at GND File: /home/felipe/Documents/insper/descomp/projeto1-descomp/clock.vhd Line: 11
+    Warning (13410): Pin "pintestULAB[6]" is stuck at GND File: /home/felipe/Documents/insper/descomp/projeto1-descomp/clock.vhd Line: 11
+    Warning (13410): Pin "pintestULAB[7]" is stuck at GND File: /home/felipe/Documents/insper/descomp/projeto1-descomp/clock.vhd Line: 11
+Info (286030): Timing-Driven Synthesis is running
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Info (21057): Implemented 87 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 1 input pins
+    Info (21059): Implemented 26 output pins
+    Info (21061): Implemented 60 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 9 warnings
+    Info: Peak virtual memory: 535 megabytes
+    Info: Processing ended: Fri Oct 16 11:54:43 2020
+    Info: Elapsed time: 00:00:11
+    Info: Total CPU time (on all processors): 00:00:29
+
+
