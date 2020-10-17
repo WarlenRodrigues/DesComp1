@@ -19,7 +19,7 @@
 -- the top level entity of the current Quartus project .The user can use this   
 -- testbench to simulate his design using a third-party simulation tool .       
 -- *****************************************************************************
--- Generated on "10/17/2020 12:33:06"
+-- Generated on "10/17/2020 13:41:09"
                                                              
 -- Vhdl Test Bench(with test vectors) for design  :          clock
 -- 
@@ -46,6 +46,7 @@ SIGNAL pintest : STD_LOGIC_VECTOR(8 DOWNTO 0);
 SIGNAL pintestULAA : STD_LOGIC_VECTOR(7 DOWNTO 0);
 SIGNAL pintestULAB : STD_LOGIC_VECTOR(7 DOWNTO 0);
 SIGNAL pintestULAFLAG : STD_LOGIC;
+SIGNAL SW : STD_LOGIC_VECTOR(9 DOWNTO 0);
 COMPONENT clock
 	PORT (
 	clock_50 : IN STD_LOGIC;
@@ -59,7 +60,8 @@ COMPONENT clock
 	pintest : OUT STD_LOGIC_VECTOR(8 DOWNTO 0);
 	pintestULAA : OUT STD_LOGIC_VECTOR(7 DOWNTO 0);
 	pintestULAB : OUT STD_LOGIC_VECTOR(7 DOWNTO 0);
-	pintestULAFLAG : OUT STD_LOGIC
+	pintestULAFLAG : OUT STD_LOGIC;
+	SW : IN STD_LOGIC_VECTOR(9 DOWNTO 0)
 	);
 END COMPONENT;
 BEGIN
@@ -77,7 +79,8 @@ BEGIN
 	pintest => pintest,
 	pintestULAA => pintestULAA,
 	pintestULAB => pintestULAB,
-	pintestULAFLAG => pintestULAFLAG
+	pintestULAFLAG => pintestULAFLAG,
+	SW => SW
 	);
 
 -- clock_50

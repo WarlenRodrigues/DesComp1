@@ -16,13 +16,17 @@ entity clock is
 		  pintestULAA : out STD_LOGIC_VECTOR(7 downto 0);
 		  pintestULAB: out STD_LOGIC_VECTOR(7 downto 0);
 		  pintestULAFLAG: out STD_LOGIC;
-		  LEDR: out STD_LOGIC_VECTOR(8 downto 0)
+		  LEDR: out STD_LOGIC_VECTOR(8 downto 0);
+		  SW : IN std_logic_vector(9 DOWNTO 0)
+
     );
 end entity;
 
 architecture rtl of clock is
 signal data_in_cpu : STD_LOGIC_VECTOR(7 downto 0);
 signal addresses : STD_LOGIC_VECTOR(7 downto 0);
+signal addresses_out_temp : STD_LOGIC_VECTOR(7 downto 0);
+
 signal data_out_cpu : STD_LOGIC_VECTOR(7 downto 0);
 signal habilitate_read_mem : STD_LOGIC;
 signal habilitate_write_mem : STD_LOGIC;
@@ -42,6 +46,7 @@ alias addresses_to_ram : STD_LOGIC_VECTOR (6 downto 0) is addresses(6 downto 0);
 alias cpu_to_register_display : STD_LOGIC_VECTOR(3 downto 0) is data_out_cpu(3 downto 0);
 alias habilita_temp : STD_LOGIC is habilitates(10);
 alias habilita_clear_temp : STD_LOGIC is habilitates(11);
+alias habilita_sw : STD_LOGIC is habilitates(6);
 
 begin
 pintest <= out_pintest;
@@ -74,14 +79,14 @@ decoder : entity work.decoder port map ( Endereco => addresses,
 
 -- Change clk for clock_50
 
---temp: entity work.divisorGenerico_e_Interface
---        port map (  
---		  clk                 => clock_50,
---		  habilitaLeitura     => habilita_temp,
---		  limpaLeitura        => habilita_clear_temp,
---		  leituraUmSegundo    => addresses
---);
-	
+temporizador: entity work.divisorGenerico_e_Interface
+  PORT MAP (
+		clk                 => clk,
+		habilitaLeitura     => habilita_temp,
+		limpaLeitura        => habilita_clear_temp,
+		leituraUmSegundo    => data_in_cpu
+  );
+
 register_display0 : entity work.generic_register_read_write	port map(DIN => cpu_to_register_display, DOUT => register_to_display0, ENABLE => habilitates(0), W => habilitate_write_mem, CLK => clk, RST => '0');
 	
 register_display1 : entity work.generic_register_read_write	port map(DIN => cpu_to_register_display, DOUT => register_to_display1, ENABLE => habilitates(1), W => habilitate_write_mem, CLK => clk, RST => '0');
@@ -94,6 +99,12 @@ register_display4 : entity work.generic_register_read_write	port map(DIN => cpu_
 
 register_display5 : entity work.generic_register_read_write	port map(DIN => cpu_to_register_display, DOUT => register_to_display5, ENABLE => habilitates(5), W => habilitate_write_mem, CLK => clk, RST => '0');
 
+interface_switches: ENTITY work.interface_switches
+  PORT MAP (
+		sw_in => SW,
+		sw_out => data_in_cpu,
+		habilita => habilita_sw
+  );
 
 display0 :  entity work.display_decoder
 port map(dadoHex => register_to_display0,
