@@ -10,7 +10,7 @@ z2
 cModel Technology
 Z0 d/home/felipe/Documents/insper/descomp/projeto1-descomp/simulation/qsim
 Eclock
-Z1 w1602868344
+Z1 w1602884127
 Z2 DPx8 cyclonev 18 cyclonev_atom_pack 0 22 ^K2eeK[IVbX]]MLcdOEI91
 Z3 DPx8 cyclonev 19 cyclonev_components 0 22 GFL[QAd@dAZF:`jjOGn9>2
 Z4 DPx12 altera_lnsim 23 altera_lnsim_components 0 22 3dzZ?YU_4FC5UU0cTXRET1
@@ -20,19 +20,19 @@ Z7 DPx4 ieee 12 vital_timing 0 22 J>EBealN09f8GzldA[z2>3
 Z8 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
 Z9 DPx4 ieee 14 std_logic_1164 0 22 cVAk:aDinOX8^VGI1ekP<3
 Z10 DPx6 altera 28 altera_primitives_components 0 22 VSD=32;3391kSOd?PDZYj3
-!i122 26
+!i122 34
 R0
 Z11 8projeto1-descomp.vho
 Z12 Fprojeto1-descomp.vho
 l0
 L39 1
-VA14SFl^ANJG:BMYbYz^[b1
-!s100 HCzRd=Z54S7Bh[z[Gn[Y[1
+VgNk=03eXgi]_@GaEmfD]D3
+!s100 =7Z89JF5oL@[CUA4Mdeg00
 Z13 OV;C;2020.1;71
 32
-Z14 !s110 1602868345
+Z14 !s110 1602884128
 !i10b 1
-Z15 !s108 1602868345.000000
+Z15 !s108 1602884128.000000
 Z16 !s90 -work|work|projeto1-descomp.vho|
 Z17 !s107 projeto1-descomp.vho|
 !i113 1
@@ -48,12 +48,12 @@ R7
 R8
 R9
 R10
-DEx4 work 5 clock 0 22 A14SFl^ANJG:BMYbYz^[b1
-!i122 26
-l491
-L49 4933
-Vkh@zYB9Y6XBM9TJb0[7Gb2
-!s100 M_lBMgSEi4H;b4Z3JFBKB3
+DEx4 work 5 clock 0 22 gNk=03eXgi]_@GaEmfD]D3
+!i122 34
+l817
+L56 8662
+VkoMAMcBGEDZ`c8VMMChlo1
+!s100 HOg8U0E`jPGUl19AW12fB0
 R13
 32
 R14
@@ -65,10 +65,10 @@ R17
 R18
 R19
 Eclock_vhd_vec_tst
-Z20 w1602868343
+Z20 w1602884126
 R8
 R9
-!i122 27
+!i122 35
 R0
 Z21 8Waveform2.vwf.vht
 Z22 FWaveform2.vwf.vht
@@ -90,11 +90,11 @@ Aclock_arch
 R8
 R9
 Z25 DEx4 work 17 clock_vhd_vec_tst 0 22 T_80GZLE]68O93I4g4GNd1
-!i122 27
-l51
-Z26 L34 44
-Z27 V[XoG6NU?MoeOUVJ]o`<d:3
-Z28 !s100 cb<0Q6R4:L=CPiiZ9[z>R1
+!i122 35
+l65
+Z26 L34 65
+Z27 VKCB_?a9^BF6IgK31nf=^R2
+Z28 !s100 8jf;>]l^DWAnW3c0WIAA_0
 R13
 32
 R14

@@ -56,4 +56,6 @@ execution_operation : entity work.execution_operation port map (
 		  pintestB => pintestULAB,
 		  pintestFlagULA => pintestULAFLAG
 		);
+
+
 end architecture;

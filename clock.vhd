@@ -26,7 +26,7 @@ signal addresses : STD_LOGIC_VECTOR(7 downto 0);
 signal data_out_cpu : STD_LOGIC_VECTOR(7 downto 0);
 signal habilitate_read_mem : STD_LOGIC;
 signal habilitate_write_mem : STD_LOGIC;
-signal habilitates : STD_LOGIC_VECTOR(9 downto 0);
+signal habilitates : STD_LOGIC_VECTOR(11 downto 0);
 signal out_pintest : STD_LOGIC_VECTOR(8 downto 0);
 signal clk : STD_LOGIC;
 
@@ -40,9 +40,12 @@ signal register_to_display0, register_to_display1, register_to_display2, registe
 alias decoder_to_ram : STD_LOGIC is habilitates(9);
 alias addresses_to_ram : STD_LOGIC_VECTOR (6 downto 0) is addresses(6 downto 0);
 alias cpu_to_register_display : STD_LOGIC_VECTOR(3 downto 0) is data_out_cpu(3 downto 0);
+alias habilita_temp : STD_LOGIC is habilitates(10);
+alias habilita_clear_temp : STD_LOGIC is habilitates(11);
 
 begin
 pintest <= out_pintest;
+-- Comment this line
 --clk <= clock_50;
 LEDR <= out_pintest;
 
@@ -58,6 +61,8 @@ cpu : entity work.cpu port map (clock => clk,
 		  pintestULAFLAG => pintestULAFLAG
 );
 
+-- Uncomment this lines
+
 divisor : entity work.divisorGenerico
             port map (clk => clock_50, saida_clk => clk);
 
@@ -66,6 +71,16 @@ port map (addr => addresses_to_ram, we => habilitate_write_mem, re => habilitate
 
 decoder : entity work.decoder port map ( Endereco => addresses, 
 		 Dado => habilitates);
+
+-- Change clk for clock_50
+
+--temp: entity work.divisorGenerico_e_Interface
+--        port map (  
+--		  clk                 => clock_50,
+--		  habilitaLeitura     => habilita_temp,
+--		  limpaLeitura        => habilita_clear_temp,
+--		  leituraUmSegundo    => addresses
+--);
 	
 register_display0 : entity work.generic_register_read_write	port map(DIN => cpu_to_register_display, DOUT => register_to_display0, ENABLE => habilitates(0), W => habilitate_write_mem, CLK => clock_50, RST => '0');
 	
