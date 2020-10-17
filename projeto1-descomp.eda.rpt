@@ -1,5 +1,5 @@
 EDA Netlist Writer report for projeto1-descomp
-Sat Oct 17 13:41:10 2020
+Sat Oct 17 16:47:54 2020
 Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
 
 
@@ -37,7 +37,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------+
 ; EDA Netlist Writer Summary                                        ;
 +---------------------------+---------------------------------------+
-; EDA Netlist Writer Status ; Successful - Sat Oct 17 13:41:10 2020 ;
+; EDA Netlist Writer Status ; Successful - Sat Oct 17 16:47:54 2020 ;
 ; Revision Name             ; projeto1-descomp                      ;
 ; Top-level Entity Name     ; clock                                 ;
 ; Family                    ; Cyclone V                             ;
@@ -95,14 +95,14 @@ Info: Running Quartus Prime EDA Netlist Writer
     Info: Intel and sold by Intel or its authorized distributors.  Please
     Info: refer to the applicable agreement for further details, at
     Info: https://fpgasoftware.intel.com/eula.
-    Info: Processing started: Sat Oct 17 13:41:10 2020
+    Info: Processing started: Sat Oct 17 16:47:53 2020
 Info: Command: quartus_eda --write_settings_files=off --simulation=on --functional=on --flatten_buses=off --tool=modelsim_oem --format=vhdl --output_directory=/home/felipe/Documents/insper/descomp/projeto1-descomp/simulation/qsim/ projeto1-descomp -c projeto1-descomp
 Info (119006): Selected device 5CEBA4F23C7 for design "projeto1-descomp"
 Info (204019): Generated file projeto1-descomp.vho in folder "/home/felipe/Documents/insper/descomp/projeto1-descomp/simulation/qsim//" for EDA simulation tool
 Info: Quartus Prime EDA Netlist Writer was successful. 0 errors, 0 warnings
-    Info: Peak virtual memory: 696 megabytes
-    Info: Processing ended: Sat Oct 17 13:41:10 2020
-    Info: Elapsed time: 00:00:00
+    Info: Peak virtual memory: 697 megabytes
+    Info: Processing ended: Sat Oct 17 16:47:54 2020
+    Info: Elapsed time: 00:00:01
     Info: Total CPU time (on all processors): 00:00:01
 
 
