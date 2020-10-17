@@ -27,7 +27,7 @@ architecture interface of divisorGenerico_e_Interface is
   
 begin
 
-saidaclk_reg1seg <= saida_clk when chave = '1' else saida_clk_2;
+saidaclk_reg1seg <= saida_clk when chave = '0' else saida_clk_2;
 
 baseTempo1: entity work.divisorGenerico
            generic map (divisor => 25000000)   -- divide por 10.
