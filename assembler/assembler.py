@@ -23,7 +23,7 @@ class Assembler:
 
     def replace_opcodes_and_registers(self):
         for line in range(0, len(self.code)):
-            command_comment = ' -- ' + self.code[line]
+            command_comment = '"; -- ' + self.code[line]
             parameters = self.code[line].split(" ")
             parameters_list = []
             for parameter in parameters:
@@ -55,7 +55,7 @@ class Assembler:
 
     def generate_bin_code(self):
         for item in self.binary:
-            full_line = 'tmp({0}) := '.format(item)
+            full_line = 'tmp({0}) := "'.format(item)
             for piece in self.binary[item]:
                 full_line += piece
             print(full_line)
@@ -74,15 +74,17 @@ registers = {"R0": "000",
              "R7": "111"}
 
 # SETTING INSTRUCTIONS DICT
-opcodes = {"LOAD": "0001",
-           "ADD": "0010",
-           "ADDI": "0100",
-           "STORE": "1000",
-           "SUB": "0011",
-           "SUBI": "0101",
-           "JMP": "0110",
-           "CMP": "1100",
-           "JE": "0111"}
+opcodes = {
+    "NOP": "0000",
+    "LOAD": "0001",
+    "ADD": "0010",
+    "ADDI": "0100",
+    "STORE": "1000",
+    "SUB": "0011",
+    "SUBI": "0101",
+    "JMP": "0110",
+    "CMP": "1001",
+    "JE": "0111"}
 
 
 # INSTANTIATING ASSEMBLER
