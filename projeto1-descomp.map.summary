@@ -1,10 +1,10 @@
-Analysis & Synthesis Status : Successful - Sat Oct 17 11:26:43 2020
+Analysis & Synthesis Status : Successful - Sat Oct 17 12:33:00 2020
 Quartus Prime Version : 20.1.0 Build 711 06/05/2020 SJ Lite Edition
 Revision Name : projeto1-descomp
 Top-level Entity Name : clock
 Family : Cyclone V
 Logic utilization (in ALMs) : N/A
-Total registers : 108
+Total registers : 98
 Total pins : 78
 Total virtual pins : 0
 Total block memory bits : 0

@@ -1,5 +1,5 @@
 Timing Analyzer report for projeto1-descomp
-Sat Oct 17 11:27:29 2020
+Sat Oct 17 12:16:04 2020
 Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
 
 
@@ -98,14 +98,14 @@ https://fpgasoftware.intel.com/eula.
 ; Number detected on machine ; 8           ;
 ; Maximum allowed            ; 4           ;
 ;                            ;             ;
-; Average used               ; 1.22        ;
+; Average used               ; 1.18        ;
 ; Maximum used               ; 4           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processor 2            ;   7.3%      ;
-;     Processor 3            ;   7.2%      ;
-;     Processor 4            ;   7.2%      ;
+;     Processor 2            ;   6.0%      ;
+;     Processor 3            ;   5.9%      ;
+;     Processor 4            ;   5.9%      ;
 +----------------------------+-------------+
 
 
@@ -967,7 +967,7 @@ No non-DPA dedicated SERDES Receiver circuitry present in device or used in desi
 Info: *******************************************************************
 Info: Running Quartus Prime Timing Analyzer
     Info: Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
-    Info: Processing started: Sat Oct 17 11:27:23 2020
+    Info: Processing started: Sat Oct 17 12:15:58 2020
 Info: Command: quartus_sta projeto1-descomp -c projeto1-descomp
 Info: qsta_default_script.tcl version: #1
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
@@ -1071,9 +1071,9 @@ Info (332146): Worst-case minimum pulse width slack is -0.409
 Info (332102): Design is not fully constrained for setup requirements
 Info (332102): Design is not fully constrained for hold requirements
 Info: Quartus Prime Timing Analyzer was successful. 0 errors, 5 warnings
-    Info: Peak virtual memory: 768 megabytes
-    Info: Processing ended: Sat Oct 17 11:27:29 2020
+    Info: Peak virtual memory: 771 megabytes
+    Info: Processing ended: Sat Oct 17 12:16:04 2020
     Info: Elapsed time: 00:00:06
-    Info: Total CPU time (on all processors): 00:00:07
+    Info: Total CPU time (on all processors): 00:00:06
 
 

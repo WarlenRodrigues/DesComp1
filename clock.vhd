@@ -46,7 +46,7 @@ alias habilita_clear_temp : STD_LOGIC is habilitates(11);
 begin
 pintest <= out_pintest;
 -- Comment this line
---clk <= clock_50;
+clk <= clock_50;
 LEDR <= out_pintest;
 
 cpu : entity work.cpu port map (clock => clk,
@@ -63,8 +63,8 @@ cpu : entity work.cpu port map (clock => clk,
 
 -- Uncomment this lines
 
-divisor : entity work.divisorGenerico
-            port map (clk => clock_50, saida_clk => clk);
+--divisor : entity work.divisorGenerico
+--            port map (clk => clock_50, saida_clk => clk);
 
 ram : entity work.memRam
 port map (addr => addresses_to_ram, we => habilitate_write_mem, re => habilitate_read_mem, habilita =>  decoder_to_ram, dado_in => data_out_cpu, dado_out => data_in_cpu, clk => clk);
@@ -82,17 +82,17 @@ decoder : entity work.decoder port map ( Endereco => addresses,
 --		  leituraUmSegundo    => addresses
 --);
 	
-register_display0 : entity work.generic_register_read_write	port map(DIN => cpu_to_register_display, DOUT => register_to_display0, ENABLE => habilitates(0), W => habilitate_write_mem, CLK => clock_50, RST => '0');
+register_display0 : entity work.generic_register_read_write	port map(DIN => cpu_to_register_display, DOUT => register_to_display0, ENABLE => habilitates(0), W => habilitate_write_mem, CLK => clk, RST => '0');
 	
-register_display1 : entity work.generic_register_read_write	port map(DIN => cpu_to_register_display, DOUT => register_to_display1, ENABLE => habilitates(1), W => habilitate_write_mem, CLK => clock_50, RST => '0');
+register_display1 : entity work.generic_register_read_write	port map(DIN => cpu_to_register_display, DOUT => register_to_display1, ENABLE => habilitates(1), W => habilitate_write_mem, CLK => clk, RST => '0');
 	
-register_display2 : entity work.generic_register_read_write	port map(DIN => cpu_to_register_display, DOUT => register_to_display2, ENABLE => habilitates(2), W => habilitate_write_mem, CLK => clock_50, RST => '0');
+register_display2 : entity work.generic_register_read_write	port map(DIN => cpu_to_register_display, DOUT => register_to_display2, ENABLE => habilitates(2), W => habilitate_write_mem, CLK => clk, RST => '0');
 
-register_display3 : entity work.generic_register_read_write	port map(DIN => cpu_to_register_display, DOUT => register_to_display3, ENABLE => habilitates(3), W => habilitate_write_mem, CLK => clock_50, RST => '0');
+register_display3 : entity work.generic_register_read_write	port map(DIN => cpu_to_register_display, DOUT => register_to_display3, ENABLE => habilitates(3), W => habilitate_write_mem, CLK => clk, RST => '0');
 
-register_display4 : entity work.generic_register_read_write	port map(DIN => cpu_to_register_display, DOUT => register_to_display4, ENABLE => habilitates(4), W => habilitate_write_mem, CLK => clock_50, RST => '0');
+register_display4 : entity work.generic_register_read_write	port map(DIN => cpu_to_register_display, DOUT => register_to_display4, ENABLE => habilitates(4), W => habilitate_write_mem, CLK => clk, RST => '0');
 
-register_display5 : entity work.generic_register_read_write	port map(DIN => cpu_to_register_display, DOUT => register_to_display5, ENABLE => habilitates(5), W => habilitate_write_mem, CLK => clock_50, RST => '0');
+register_display5 : entity work.generic_register_read_write	port map(DIN => cpu_to_register_display, DOUT => register_to_display5, ENABLE => habilitates(5), W => habilitate_write_mem, CLK => clk, RST => '0');
 
 
 display0 :  entity work.display_decoder
