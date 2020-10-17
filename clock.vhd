@@ -88,8 +88,8 @@ temporizador: entity work.divisorGenerico_e_Interface
 		clk                 => clk,
 		habilitaLeitura     => habilita_temp,
 		limpaLeitura        => habilita_clear_temp,
-		leituraUmSegundo    => data_in_cpu
---		chave => chave_to_temporizador
+		leituraUmSegundo    => data_in_cpu,
+		chave => chave_to_temporizador
   );
 
 register_display0 : entity work.generic_register_read_write	port map(DIN => cpu_to_register_display, DOUT => register_to_display0, ENABLE => habilitates(0), W => habilitate_write_mem, CLK => clk, RST => '0');

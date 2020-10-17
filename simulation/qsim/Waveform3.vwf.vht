@@ -19,7 +19,7 @@
 -- the top level entity of the current Quartus project .The user can use this   
 -- testbench to simulate his design using a third-party simulation tool .       
 -- *****************************************************************************
--- Generated on "10/17/2020 16:47:52"
+-- Generated on "10/17/2020 17:46:24"
                                                              
 -- Vhdl Test Bench(with test vectors) for design  :          clock
 -- 
@@ -51,18 +51,18 @@ SIGNAL SW : STD_LOGIC_VECTOR(9 DOWNTO 0);
 COMPONENT clock
 	PORT (
 	clock_50 : IN STD_LOGIC;
-	data_out : OUT STD_LOGIC_VECTOR(7 DOWNTO 0);
-	HEX0 : OUT STD_LOGIC_VECTOR(6 DOWNTO 0);
-	HEX1 : OUT STD_LOGIC_VECTOR(6 DOWNTO 0);
-	HEX2 : OUT STD_LOGIC_VECTOR(6 DOWNTO 0);
-	HEX3 : OUT STD_LOGIC_VECTOR(6 DOWNTO 0);
-	HEX4 : OUT STD_LOGIC_VECTOR(6 DOWNTO 0);
-	HEX5 : OUT STD_LOGIC_VECTOR(6 DOWNTO 0);
-	LEDR : OUT STD_LOGIC_VECTOR(8 DOWNTO 0);
-	pintest : OUT STD_LOGIC_VECTOR(8 DOWNTO 0);
-	pintestULAA : OUT STD_LOGIC_VECTOR(7 DOWNTO 0);
-	pintestULAB : OUT STD_LOGIC_VECTOR(7 DOWNTO 0);
-	pintestULAFLAG : OUT STD_LOGIC;
+	data_out : BUFFER STD_LOGIC_VECTOR(7 DOWNTO 0);
+	HEX0 : BUFFER STD_LOGIC_VECTOR(6 DOWNTO 0);
+	HEX1 : BUFFER STD_LOGIC_VECTOR(6 DOWNTO 0);
+	HEX2 : BUFFER STD_LOGIC_VECTOR(6 DOWNTO 0);
+	HEX3 : BUFFER STD_LOGIC_VECTOR(6 DOWNTO 0);
+	HEX4 : BUFFER STD_LOGIC_VECTOR(6 DOWNTO 0);
+	HEX5 : BUFFER STD_LOGIC_VECTOR(6 DOWNTO 0);
+	LEDR : BUFFER STD_LOGIC_VECTOR(8 DOWNTO 0);
+	pintest : BUFFER STD_LOGIC_VECTOR(8 DOWNTO 0);
+	pintestULAA : BUFFER STD_LOGIC_VECTOR(7 DOWNTO 0);
+	pintestULAB : BUFFER STD_LOGIC_VECTOR(7 DOWNTO 0);
+	pintestULAFLAG : BUFFER STD_LOGIC;
 	SW : IN STD_LOGIC_VECTOR(9 DOWNTO 0)
 	);
 END COMPONENT;

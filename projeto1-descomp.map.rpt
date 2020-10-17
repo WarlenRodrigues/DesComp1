@@ -1,5 +1,5 @@
 Analysis & Synthesis report for projeto1-descomp
-Sat Oct 17 17:40:43 2020
+Sat Oct 17 18:12:27 2020
 Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
 
 
@@ -25,34 +25,35 @@ Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
  17. Parameter Settings for User Entity Instance: cpu:cpu|execution_operation:execution_operation|register_bank:registers
  18. Parameter Settings for User Entity Instance: memRam:ram
  19. Parameter Settings for User Entity Instance: divisorGenerico_e_Interface:temporizador
- 20. Parameter Settings for User Entity Instance: divisorGenerico_e_Interface:temporizador|divisorGenerico:baseTempo
- 21. Parameter Settings for User Entity Instance: generic_register_read_write:register_display0
- 22. Parameter Settings for User Entity Instance: generic_register_read_write:register_display1
- 23. Parameter Settings for User Entity Instance: generic_register_read_write:register_display2
- 24. Parameter Settings for User Entity Instance: generic_register_read_write:register_display3
- 25. Parameter Settings for User Entity Instance: generic_register_read_write:register_display4
- 26. Parameter Settings for User Entity Instance: generic_register_read_write:register_display5
- 27. Port Connectivity Checks: "display_decoder:display5"
- 28. Port Connectivity Checks: "display_decoder:display4"
- 29. Port Connectivity Checks: "display_decoder:display3"
- 30. Port Connectivity Checks: "display_decoder:display2"
- 31. Port Connectivity Checks: "display_decoder:display1"
- 32. Port Connectivity Checks: "display_decoder:display0"
- 33. Port Connectivity Checks: "generic_register_read_write:register_display5"
- 34. Port Connectivity Checks: "generic_register_read_write:register_display4"
- 35. Port Connectivity Checks: "generic_register_read_write:register_display3"
- 36. Port Connectivity Checks: "generic_register_read_write:register_display2"
- 37. Port Connectivity Checks: "generic_register_read_write:register_display1"
- 38. Port Connectivity Checks: "generic_register_read_write:register_display0"
- 39. Port Connectivity Checks: "divisorGenerico_e_Interface:temporizador|flipflop:registraUmSegundo"
- 40. Port Connectivity Checks: "decoder:decoder"
- 41. Port Connectivity Checks: "cpu:cpu|execution_operation:execution_operation|flipflop:flipflop"
- 42. Port Connectivity Checks: "cpu:cpu|execution_operation:execution_operation|ULA:ula"
- 43. Port Connectivity Checks: "cpu:cpu|instruction_search:instruction_search|adder:adder"
- 44. Port Connectivity Checks: "cpu:cpu|instruction_search:instruction_search|generic_register:pc"
- 45. Post-Synthesis Netlist Statistics for Top Partition
- 46. Elapsed Time Per Partition
- 47. Analysis & Synthesis Messages
+ 20. Parameter Settings for User Entity Instance: divisorGenerico_e_Interface:temporizador|divisorGenerico:baseTempo1
+ 21. Parameter Settings for User Entity Instance: divisorGenerico_e_Interface:temporizador|divisorGenerico:baseTempo2
+ 22. Parameter Settings for User Entity Instance: generic_register_read_write:register_display0
+ 23. Parameter Settings for User Entity Instance: generic_register_read_write:register_display1
+ 24. Parameter Settings for User Entity Instance: generic_register_read_write:register_display2
+ 25. Parameter Settings for User Entity Instance: generic_register_read_write:register_display3
+ 26. Parameter Settings for User Entity Instance: generic_register_read_write:register_display4
+ 27. Parameter Settings for User Entity Instance: generic_register_read_write:register_display5
+ 28. Port Connectivity Checks: "display_decoder:display5"
+ 29. Port Connectivity Checks: "display_decoder:display4"
+ 30. Port Connectivity Checks: "display_decoder:display3"
+ 31. Port Connectivity Checks: "display_decoder:display2"
+ 32. Port Connectivity Checks: "display_decoder:display1"
+ 33. Port Connectivity Checks: "display_decoder:display0"
+ 34. Port Connectivity Checks: "generic_register_read_write:register_display5"
+ 35. Port Connectivity Checks: "generic_register_read_write:register_display4"
+ 36. Port Connectivity Checks: "generic_register_read_write:register_display3"
+ 37. Port Connectivity Checks: "generic_register_read_write:register_display2"
+ 38. Port Connectivity Checks: "generic_register_read_write:register_display1"
+ 39. Port Connectivity Checks: "generic_register_read_write:register_display0"
+ 40. Port Connectivity Checks: "divisorGenerico_e_Interface:temporizador|flipflop:registraUmSegundo"
+ 41. Port Connectivity Checks: "decoder:decoder"
+ 42. Port Connectivity Checks: "cpu:cpu|execution_operation:execution_operation|flipflop:flipflop"
+ 43. Port Connectivity Checks: "cpu:cpu|execution_operation:execution_operation|ULA:ula"
+ 44. Port Connectivity Checks: "cpu:cpu|instruction_search:instruction_search|adder:adder"
+ 45. Port Connectivity Checks: "cpu:cpu|instruction_search:instruction_search|generic_register:pc"
+ 46. Post-Synthesis Netlist Statistics for Top Partition
+ 47. Elapsed Time Per Partition
+ 48. Analysis & Synthesis Messages
 
 
 
@@ -79,13 +80,13 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +---------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Sat Oct 17 17:40:43 2020       ;
+; Analysis & Synthesis Status     ; Successful - Sat Oct 17 18:12:27 2020       ;
 ; Quartus Prime Version           ; 20.1.0 Build 711 06/05/2020 SJ Lite Edition ;
 ; Revision Name                   ; projeto1-descomp                            ;
 ; Top-level Entity Name           ; clock                                       ;
 ; Family                          ; Cyclone V                                   ;
 ; Logic utilization (in ALMs)     ; N/A                                         ;
-; Total registers                 ; 1117                                        ;
+; Total registers                 ; 1135                                        ;
 ; Total pins                      ; 96                                          ;
 ; Total virtual pins              ; 0                                           ;
 ; Total block memory bits         ; 0                                           ;
@@ -239,25 +240,25 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------+----------------+
 ; Resource                                    ; Usage          ;
 +---------------------------------------------+----------------+
-; Estimate of Logic utilization (ALMs needed) ; 953            ;
+; Estimate of Logic utilization (ALMs needed) ; 965            ;
 ;                                             ;                ;
-; Combinational ALUT usage for logic          ; 734            ;
-;     -- 7 input functions                    ; 256            ;
-;     -- 6 input functions                    ; 173            ;
-;     -- 5 input functions                    ; 38             ;
-;     -- 4 input functions                    ; 72             ;
-;     -- <=3 input functions                  ; 195            ;
+; Combinational ALUT usage for logic          ; 757            ;
+;     -- 7 input functions                    ; 257            ;
+;     -- 6 input functions                    ; 172            ;
+;     -- 5 input functions                    ; 41             ;
+;     -- 4 input functions                    ; 73             ;
+;     -- <=3 input functions                  ; 214            ;
 ;                                             ;                ;
-; Dedicated logic registers                   ; 1117           ;
+; Dedicated logic registers                   ; 1135           ;
 ;                                             ;                ;
 ; I/O pins                                    ; 96             ;
 ;                                             ;                ;
 ; Total DSP Blocks                            ; 0              ;
 ;                                             ;                ;
 ; Maximum fan-out node                        ; clock_50~input ;
-; Maximum fan-out                             ; 1116           ;
-; Total fan-out                               ; 7337           ;
-; Average fan-out                             ; 3.59           ;
+; Maximum fan-out                             ; 1134           ;
+; Total fan-out                               ; 7448           ;
+; Average fan-out                             ; 3.57           ;
 +---------------------------------------------+----------------+
 
 
@@ -266,7 +267,7 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+--------------------------------------------------------------------------------+-----------------------------+--------------+
 ; Compilation Hierarchy Node                         ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                                            ; Entity Name                 ; Library Name ;
 +----------------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+--------------------------------------------------------------------------------+-----------------------------+--------------+
-; |clock                                             ; 734 (0)             ; 1117 (0)                  ; 0                 ; 0          ; 96   ; 0            ; |clock                                                                         ; clock                       ; work         ;
+; |clock                                             ; 757 (0)             ; 1135 (0)                  ; 0                 ; 0          ; 96   ; 0            ; |clock                                                                         ; clock                       ; work         ;
 ;    |cpu:cpu|                                       ; 134 (0)             ; 42 (0)                    ; 0                 ; 0          ; 0    ; 0            ; |clock|cpu:cpu                                                                 ; cpu                         ; work         ;
 ;       |execution_operation:execution_operation|    ; 60 (0)              ; 33 (0)                    ; 0                 ; 0          ; 0    ; 0            ; |clock|cpu:cpu|execution_operation:execution_operation                         ; execution_operation         ; work         ;
 ;          |ULA:ula|                                 ; 27 (27)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |clock|cpu:cpu|execution_operation:execution_operation|ULA:ula                 ; ULA                         ; work         ;
@@ -286,8 +287,9 @@ https://fpgasoftware.intel.com/eula.
 ;    |display_decoder:display3|                      ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |clock|display_decoder:display3                                                ; display_decoder             ; work         ;
 ;    |display_decoder:display4|                      ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |clock|display_decoder:display4                                                ; display_decoder             ; work         ;
 ;    |display_decoder:display5|                      ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |clock|display_decoder:display5                                                ; display_decoder             ; work         ;
-;    |divisorGenerico_e_Interface:temporizador|      ; 47 (14)             ; 27 (0)                    ; 0                 ; 0          ; 0    ; 0            ; |clock|divisorGenerico_e_Interface:temporizador                                ; divisorGenerico_e_Interface ; work         ;
-;       |divisorGenerico:baseTempo|                  ; 33 (33)             ; 26 (26)                   ; 0                 ; 0          ; 0    ; 0            ; |clock|divisorGenerico_e_Interface:temporizador|divisorGenerico:baseTempo      ; divisorGenerico             ; work         ;
+;    |divisorGenerico_e_Interface:temporizador|      ; 70 (15)             ; 45 (0)                    ; 0                 ; 0          ; 0    ; 0            ; |clock|divisorGenerico_e_Interface:temporizador                                ; divisorGenerico_e_Interface ; work         ;
+;       |divisorGenerico:baseTempo1|                 ; 33 (33)             ; 26 (26)                   ; 0                 ; 0          ; 0    ; 0            ; |clock|divisorGenerico_e_Interface:temporizador|divisorGenerico:baseTempo1     ; divisorGenerico             ; work         ;
+;       |divisorGenerico:baseTempo2|                 ; 22 (22)             ; 18 (18)                   ; 0                 ; 0          ; 0    ; 0            ; |clock|divisorGenerico_e_Interface:temporizador|divisorGenerico:baseTempo2     ; divisorGenerico             ; work         ;
 ;       |flipflop:registraUmSegundo|                 ; 0 (0)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |clock|divisorGenerico_e_Interface:temporizador|flipflop:registraUmSegundo     ; flipflop                    ; work         ;
 ;    |generic_register_read_write:register_display0| ; 1 (1)               ; 4 (4)                     ; 0                 ; 0          ; 0    ; 0            ; |clock|generic_register_read_write:register_display0                           ; generic_register_read_write ; work         ;
 ;    |generic_register_read_write:register_display1| ; 2 (2)               ; 4 (4)                     ; 0                 ; 0          ; 0    ; 0            ; |clock|generic_register_read_write:register_display1                           ; generic_register_read_write ; work         ;
@@ -306,8 +308,8 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 1117  ;
-; Number of registers using Synchronous Clear  ; 25    ;
+; Total registers                              ; 1135  ;
+; Number of registers using Synchronous Clear  ; 42    ;
 ; Number of registers using Synchronous Load   ; 40    ;
 ; Number of registers using Asynchronous Clear ; 1     ;
 ; Number of registers using Asynchronous Load  ; 0     ;
@@ -321,7 +323,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------------------------+
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                              ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------------------------+
-; 3:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; No         ; |clock|cpu:cpu|execution_operation:execution_operation|ULA:ula|saida[6] ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; No         ; |clock|cpu:cpu|execution_operation:execution_operation|ULA:ula|saida[0] ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------------------------+
 
 
@@ -429,13 +431,23 @@ Note: In order to hide this table in the UI and the text report file, please set
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
-+-----------------------------------------------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: divisorGenerico_e_Interface:temporizador|divisorGenerico:baseTempo ;
-+----------------+----------+-------------------------------------------------------------------------------------+
-; Parameter Name ; Value    ; Type                                                                                ;
-+----------------+----------+-------------------------------------------------------------------------------------+
-; divisor        ; 25000000 ; Signed Integer                                                                      ;
-+----------------+----------+-------------------------------------------------------------------------------------+
++------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: divisorGenerico_e_Interface:temporizador|divisorGenerico:baseTempo1 ;
++----------------+----------+--------------------------------------------------------------------------------------+
+; Parameter Name ; Value    ; Type                                                                                 ;
++----------------+----------+--------------------------------------------------------------------------------------+
+; divisor        ; 25000000 ; Signed Integer                                                                       ;
++----------------+----------+--------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: divisorGenerico_e_Interface:temporizador|divisorGenerico:baseTempo2 ;
++----------------+--------+----------------------------------------------------------------------------------------+
+; Parameter Name ; Value  ; Type                                                                                   ;
++----------------+--------+----------------------------------------------------------------------------------------+
+; divisor        ; 100000 ; Signed Integer                                                                         ;
++----------------+--------+----------------------------------------------------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
@@ -682,31 +694,31 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; arriav_ff             ; 1117                        ;
+; arriav_ff             ; 1135                        ;
 ;     CLR               ; 1                           ;
 ;     ENA               ; 1048                        ;
 ;     ENA SLD           ; 32                          ;
-;     SCLR              ; 25                          ;
+;     SCLR              ; 42                          ;
 ;     SLD               ; 8                           ;
-;     plain             ; 3                           ;
+;     plain             ; 4                           ;
 ; arriav_io_obuf        ; 8                           ;
-; arriav_lcell_comb     ; 734                         ;
-;     arith             ; 43                          ;
-;         1 data inputs ; 34                          ;
+; arriav_lcell_comb     ; 757                         ;
+;     arith             ; 60                          ;
+;         1 data inputs ; 51                          ;
 ;         2 data inputs ; 1                           ;
 ;         4 data inputs ; 8                           ;
-;     extend            ; 256                         ;
-;         7 data inputs ; 256                         ;
-;     normal            ; 435                         ;
-;         2 data inputs ; 135                         ;
-;         3 data inputs ; 25                          ;
-;         4 data inputs ; 64                          ;
-;         5 data inputs ; 38                          ;
-;         6 data inputs ; 173                         ;
+;     extend            ; 257                         ;
+;         7 data inputs ; 257                         ;
+;     normal            ; 440                         ;
+;         2 data inputs ; 136                         ;
+;         3 data inputs ; 26                          ;
+;         4 data inputs ; 65                          ;
+;         5 data inputs ; 41                          ;
+;         6 data inputs ; 172                         ;
 ; boundary_port         ; 96                          ;
 ;                       ;                             ;
 ; Max LUT depth         ; 10.00                       ;
-; Average LUT depth     ; 6.42                        ;
+; Average LUT depth     ; 6.31                        ;
 +-----------------------+-----------------------------+
 
 
@@ -725,7 +737,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
-    Info: Processing started: Sat Oct 17 17:40:31 2020
+    Info: Processing started: Sat Oct 17 18:12:15 2020
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off projeto1-descomp -c projeto1-descomp
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
 Info (12021): Found 2 design units, including 1 entities, in source file muxgenerico.vhd
@@ -783,7 +795,7 @@ Info (12021): Found 2 design units, including 1 entities, in source file divisor
     Info (12022): Found design unit 1: divisorGenerico-rtl File: /home/felipe/Documents/insper/descomp/projeto1-descomp/divisorGenerico.vhd Line: 17
     Info (12023): Found entity 1: divisorGenerico File: /home/felipe/Documents/insper/descomp/projeto1-descomp/divisorGenerico.vhd Line: 5
 Info (12021): Found 2 design units, including 1 entities, in source file divisorGenerico_e_Interface.vhd
-    Info (12022): Found design unit 1: divisorGenerico_e_Interface-interface File: /home/felipe/Documents/insper/descomp/projeto1-descomp/divisorGenerico_e_Interface.vhd Line: 20
+    Info (12022): Found design unit 1: divisorGenerico_e_Interface-interface File: /home/felipe/Documents/insper/descomp/projeto1-descomp/divisorGenerico_e_Interface.vhd Line: 21
     Info (12023): Found entity 1: divisorGenerico_e_Interface File: /home/felipe/Documents/insper/descomp/projeto1-descomp/divisorGenerico_e_Interface.vhd Line: 5
 Info (12021): Found 2 design units, including 1 entities, in source file interface_switches.vhd
     Info (12022): Found design unit 1: interface_switches-comportamento File: /home/felipe/Documents/insper/descomp/projeto1-descomp/interface_switches.vhd Line: 13
@@ -804,10 +816,13 @@ Info (12128): Elaborating entity "flipflop" for hierarchy "cpu:cpu|execution_ope
 Info (12128): Elaborating entity "memRam" for hierarchy "memRam:ram" File: /home/felipe/Documents/insper/descomp/projeto1-descomp/clock.vhd Line: 78
 Info (12128): Elaborating entity "decoder" for hierarchy "decoder:decoder" File: /home/felipe/Documents/insper/descomp/projeto1-descomp/clock.vhd Line: 81
 Info (12128): Elaborating entity "divisorGenerico_e_Interface" for hierarchy "divisorGenerico_e_Interface:temporizador" File: /home/felipe/Documents/insper/descomp/projeto1-descomp/clock.vhd Line: 86
-Info (12128): Elaborating entity "divisorGenerico" for hierarchy "divisorGenerico_e_Interface:temporizador|divisorGenerico:baseTempo" File: /home/felipe/Documents/insper/descomp/projeto1-descomp/divisorGenerico_e_Interface.vhd Line: 27
+Info (12128): Elaborating entity "divisorGenerico" for hierarchy "divisorGenerico_e_Interface:temporizador|divisorGenerico:baseTempo1" File: /home/felipe/Documents/insper/descomp/projeto1-descomp/divisorGenerico_e_Interface.vhd Line: 32
+Info (12128): Elaborating entity "divisorGenerico" for hierarchy "divisorGenerico_e_Interface:temporizador|divisorGenerico:baseTempo2" File: /home/felipe/Documents/insper/descomp/projeto1-descomp/divisorGenerico_e_Interface.vhd Line: 36
 Info (12128): Elaborating entity "generic_register_read_write" for hierarchy "generic_register_read_write:register_display0" File: /home/felipe/Documents/insper/descomp/projeto1-descomp/clock.vhd Line: 95
 Info (12128): Elaborating entity "interface_switches" for hierarchy "interface_switches:interface_switches" File: /home/felipe/Documents/insper/descomp/projeto1-descomp/clock.vhd Line: 107
 Info (12128): Elaborating entity "display_decoder" for hierarchy "display_decoder:display0" File: /home/felipe/Documents/insper/descomp/projeto1-descomp/clock.vhd Line: 114
+Warning (19016): Clock multiplexers are found and protected
+    Warning (19017): Found clock multiplexer divisorGenerico_e_Interface:temporizador|saidaclk_reg1seg File: /home/felipe/Documents/insper/descomp/projeto1-descomp/divisorGenerico_e_Interface.vhd Line: 24
 Info (276014): Found 3 instances of uninferred RAM logic
     Info (276007): RAM logic "memRam:ram|ram" is uninferred due to asynchronous read logic File: /home/felipe/Documents/insper/descomp/projeto1-descomp/memRam.vhd Line: 27
     Info (276007): RAM logic "cpu:cpu|execution_operation:execution_operation|register_bank:registers|registrador" is uninferred due to asynchronous read logic File: /home/felipe/Documents/insper/descomp/projeto1-descomp/register_bank.vhd Line: 29
@@ -827,14 +842,14 @@ Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
 Warning (21074): Design contains 2 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "SW[8]" File: /home/felipe/Documents/insper/descomp/projeto1-descomp/clock.vhd Line: 20
     Warning (15610): No output dependent on input pin "SW[9]" File: /home/felipe/Documents/insper/descomp/projeto1-descomp/clock.vhd Line: 20
-Info (21057): Implemented 1911 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 1934 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 11 input pins
     Info (21059): Implemented 85 output pins
-    Info (21061): Implemented 1815 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 12 warnings
-    Info: Peak virtual memory: 537 megabytes
-    Info: Processing ended: Sat Oct 17 17:40:43 2020
+    Info (21061): Implemented 1838 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 14 warnings
+    Info: Peak virtual memory: 544 megabytes
+    Info: Processing ended: Sat Oct 17 18:12:27 2020
     Info: Elapsed time: 00:00:12
-    Info: Total CPU time (on all processors): 00:00:28
+    Info: Total CPU time (on all processors): 00:00:29
 
 

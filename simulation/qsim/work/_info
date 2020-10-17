@@ -10,7 +10,7 @@ z2
 cModel Technology
 Z0 d/home/felipe/Documents/insper/descomp/projeto1-descomp/simulation/qsim
 Eclock
-Z1 w1602964074
+Z1 w1602967586
 Z2 DPx8 cyclonev 18 cyclonev_atom_pack 0 22 ^K2eeK[IVbX]]MLcdOEI91
 Z3 DPx8 cyclonev 19 cyclonev_components 0 22 GFL[QAd@dAZF:`jjOGn9>2
 Z4 DPx12 altera_lnsim 23 altera_lnsim_components 0 22 3dzZ?YU_4FC5UU0cTXRET1
@@ -20,19 +20,19 @@ Z7 DPx4 ieee 12 vital_timing 0 22 J>EBealN09f8GzldA[z2>3
 Z8 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
 Z9 DPx4 ieee 14 std_logic_1164 0 22 cVAk:aDinOX8^VGI1ekP<3
 Z10 DPx6 altera 28 altera_primitives_components 0 22 VSD=32;3391kSOd?PDZYj3
-!i122 80
+!i122 82
 R0
 Z11 8projeto1-descomp.vho
 Z12 Fprojeto1-descomp.vho
 l0
 L39 1
-VX>zH<ki[Ad@AS?ZeaeFXh1
-!s100 O9P00Cz;9759TS3:bWKIW3
+V:6R>0<DZJ_]HZWKEI20_D3
+!s100 F]BlaVK@R6WacRGXN39_W1
 Z13 OV;C;2020.1;71
 32
-Z14 !s110 1602964075
+Z14 !s110 1602967587
 !i10b 1
-Z15 !s108 1602964074.000000
+Z15 !s108 1602967587.000000
 Z16 !s90 -work|work|projeto1-descomp.vho|
 Z17 !s107 projeto1-descomp.vho|
 !i113 1
@@ -48,12 +48,12 @@ R7
 R8
 R9
 R10
-DEx4 work 5 clock 0 22 X>zH<ki[Ad@AS?ZeaeFXh1
-!i122 80
-l484
-L58 5837
-Vjfb1ObU<1ghCn^0hJ=<8@0
-!s100 UAhjI;:Gnh@W:7ETW8ifT1
+DEx4 work 5 clock 0 22 :6R>0<DZJ_]HZWKEI20_D3
+!i122 82
+l3590
+L58 36512
+V@MdSFNGd3^aWL8mLS;HAK1
+!s100 eRGJ_87EaD[^;ZGh63^j_1
 R13
 32
 R14
@@ -65,10 +65,10 @@ R17
 R18
 R19
 Eclock_vhd_vec_tst
-Z20 w1602964072
+Z20 w1602967584
 R8
 R9
-!i122 81
+!i122 83
 R0
 Z21 8Waveform3.vwf.vht
 Z22 FWaveform3.vwf.vht
@@ -78,30 +78,30 @@ VT_80GZLE]68O93I4g4GNd1
 !s100 ?ES[nJf`ZiJ[2kU`jb]b03
 R13
 32
-R14
+Z23 !s110 1602967588
 !i10b 1
-Z23 !s108 1602964075.000000
-Z24 !s90 -work|work|Waveform3.vwf.vht|
-Z25 !s107 Waveform3.vwf.vht|
+Z24 !s108 1602967588.000000
+Z25 !s90 -work|work|Waveform3.vwf.vht|
+Z26 !s107 Waveform3.vwf.vht|
 !i113 1
 R18
 R19
 Aclock_arch
 R8
 R9
-Z26 DEx4 work 17 clock_vhd_vec_tst 0 22 T_80GZLE]68O93I4g4GNd1
-!i122 81
+Z27 DEx4 work 17 clock_vhd_vec_tst 0 22 T_80GZLE]68O93I4g4GNd1
+!i122 83
 l69
-Z27 L34 127
-Z28 V91<WVk?:Rjl]2JIbH3:AW3
-Z29 !s100 Z;aLPkPYSP^@fQHJH5Oj21
+Z28 L34 127
+VWWDQO0WgoR:BY9O<;GEz=0
+!s100 61RM@Ina[Eo1OZV]4RNgI1
 R13
 32
-R14
-!i10b 1
 R23
+!i10b 1
 R24
 R25
+R26
 !i113 1
 R18
 R19
