@@ -27,14 +27,18 @@ architecture interface of divisorGenerico_e_Interface is
   
 begin
 
+-- Nesse arquivo definimos qual base de tempo utilizaremos. Para testar o funciomanento do programa criamos duas bases de tempo.
+-- Uma delas com 1 segundo para funcionar normalmente a outra com menos para testar se o programa esta certo.
+-- Lemos a chave 0 da placa. No caso dela estar em 0 usamos a base de tempo de 1 segundo. Em caso dela estar 1 utilizamos a contagem mais rapida.
+
 saidaclk_reg1seg <= saida_clk when chave = '0' else saida_clk_2;
 
 baseTempo1: entity work.divisorGenerico
-           generic map (divisor => 25000000)   -- divide por 10.
+           generic map (divisor => 25000000)
            port map (clk => clk, saida_clk => saida_clk);
 
 baseTempo2: entity work.divisorGenerico
-           generic map (divisor => 100000)   -- divide por 10.
+           generic map (divisor => 100000)
            port map (clk => clk, saida_clk => saida_clk_2);
 
 registraUmSegundo: entity work.flipflop

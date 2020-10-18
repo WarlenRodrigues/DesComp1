@@ -18,6 +18,8 @@ architecture rtl of decoder is
 
 begin
 
+-- Cada um dos dados leva a um endereco de memoria.
+
 Dado <= "001000000000" when Endereco(7) = '1' else -- Bloco RAM
 		  "000000000001" when Endereco = "00000000" else -- Display 0
 		  "000000000010" when Endereco = "00000001" else -- Display 1
