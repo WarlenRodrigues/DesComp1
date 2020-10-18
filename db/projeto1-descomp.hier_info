@@ -1132,14 +1132,14 @@ sw_out[4] <= sw_out[4].DB_MAX_OUTPUT_PORT_TYPE
 sw_out[5] <= sw_out[5].DB_MAX_OUTPUT_PORT_TYPE
 sw_out[6] <= sw_out[6].DB_MAX_OUTPUT_PORT_TYPE
 sw_out[7] <= sw_out[7].DB_MAX_OUTPUT_PORT_TYPE
-habilita => sw_out[0].OE
-habilita => sw_out[1].OE
-habilita => sw_out[2].OE
-habilita => sw_out[3].OE
-habilita => sw_out[4].OE
-habilita => sw_out[5].OE
-habilita => sw_out[6].OE
-habilita => sw_out[7].OE
+habilitate => sw_out[0].OE
+habilitate => sw_out[1].OE
+habilitate => sw_out[2].OE
+habilitate => sw_out[3].OE
+habilitate => sw_out[4].OE
+habilitate => sw_out[5].OE
+habilitate => sw_out[6].OE
+habilitate => sw_out[7].OE
 
 
 |clock|display_decoder:display0

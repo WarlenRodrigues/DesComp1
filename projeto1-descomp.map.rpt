@@ -1,5 +1,5 @@
 Analysis & Synthesis report for projeto1-descomp
-Sat Oct 17 19:49:22 2020
+Sun Oct 18 10:46:20 2020
 Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
 
 
@@ -80,7 +80,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +---------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Sat Oct 17 19:49:22 2020       ;
+; Analysis & Synthesis Status     ; Successful - Sun Oct 18 10:46:20 2020       ;
 ; Quartus Prime Version           ; 20.1.0 Build 711 06/05/2020 SJ Lite Edition ;
 ; Revision Name                   ; projeto1-descomp                            ;
 ; Top-level Entity Name           ; clock                                       ;
@@ -240,14 +240,14 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------+----------------+
 ; Resource                                    ; Usage          ;
 +---------------------------------------------+----------------+
-; Estimate of Logic utilization (ALMs needed) ; 979            ;
+; Estimate of Logic utilization (ALMs needed) ; 976            ;
 ;                                             ;                ;
-; Combinational ALUT usage for logic          ; 781            ;
+; Combinational ALUT usage for logic          ; 780            ;
 ;     -- 7 input functions                    ; 257            ;
-;     -- 6 input functions                    ; 193            ;
-;     -- 5 input functions                    ; 51             ;
-;     -- 4 input functions                    ; 78             ;
-;     -- <=3 input functions                  ; 202            ;
+;     -- 6 input functions                    ; 190            ;
+;     -- 5 input functions                    ; 47             ;
+;     -- 4 input functions                    ; 211            ;
+;     -- <=3 input functions                  ; 75             ;
 ;                                             ;                ;
 ; Dedicated logic registers                   ; 1135           ;
 ;                                             ;                ;
@@ -257,8 +257,8 @@ https://fpgasoftware.intel.com/eula.
 ;                                             ;                ;
 ; Maximum fan-out node                        ; clock_50~input ;
 ; Maximum fan-out                             ; 1134           ;
-; Total fan-out                               ; 7604           ;
-; Average fan-out                             ; 3.61           ;
+; Total fan-out                               ; 7846           ;
+; Average fan-out                             ; 3.72           ;
 +---------------------------------------------+----------------+
 
 
@@ -267,20 +267,20 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+--------------------------------------------------------------------------------+-----------------------------+--------------+
 ; Compilation Hierarchy Node                         ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                                            ; Entity Name                 ; Library Name ;
 +----------------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+--------------------------------------------------------------------------------+-----------------------------+--------------+
-; |clock                                             ; 781 (0)             ; 1135 (0)                  ; 0                 ; 0          ; 96   ; 0            ; |clock                                                                         ; clock                       ; work         ;
-;    |cpu:cpu|                                       ; 162 (0)             ; 42 (0)                    ; 0                 ; 0          ; 0    ; 0            ; |clock|cpu:cpu                                                                 ; cpu                         ; work         ;
-;       |execution_operation:execution_operation|    ; 58 (0)              ; 33 (0)                    ; 0                 ; 0          ; 0    ; 0            ; |clock|cpu:cpu|execution_operation:execution_operation                         ; execution_operation         ; work         ;
-;          |ULA:ula|                                 ; 27 (27)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |clock|cpu:cpu|execution_operation:execution_operation|ULA:ula                 ; ULA                         ; work         ;
+; |clock                                             ; 780 (0)             ; 1135 (0)                  ; 0                 ; 0          ; 96   ; 0            ; |clock                                                                         ; clock                       ; work         ;
+;    |cpu:cpu|                                       ; 160 (0)             ; 42 (0)                    ; 0                 ; 0          ; 0    ; 0            ; |clock|cpu:cpu                                                                 ; cpu                         ; work         ;
+;       |execution_operation:execution_operation|    ; 60 (0)              ; 33 (0)                    ; 0                 ; 0          ; 0    ; 0            ; |clock|cpu:cpu|execution_operation:execution_operation                         ; execution_operation         ; work         ;
+;          |ULA:ula|                                 ; 28 (28)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |clock|cpu:cpu|execution_operation:execution_operation|ULA:ula                 ; ULA                         ; work         ;
 ;          |flipflop:flipflop|                       ; 2 (2)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |clock|cpu:cpu|execution_operation:execution_operation|flipflop:flipflop       ; flipflop                    ; work         ;
-;          |muxgenerico:mux|                         ; 17 (17)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |clock|cpu:cpu|execution_operation:execution_operation|muxgenerico:mux         ; muxgenerico                 ; work         ;
+;          |muxgenerico:mux|                         ; 18 (18)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |clock|cpu:cpu|execution_operation:execution_operation|muxgenerico:mux         ; muxgenerico                 ; work         ;
 ;          |register_bank:registers|                 ; 12 (12)             ; 32 (32)                   ; 0                 ; 0          ; 0    ; 0            ; |clock|cpu:cpu|execution_operation:execution_operation|register_bank:registers ; register_bank               ; work         ;
-;       |instruction_search:instruction_search|      ; 104 (1)             ; 9 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |clock|cpu:cpu|instruction_search:instruction_search                           ; instruction_search          ; work         ;
+;       |instruction_search:instruction_search|      ; 100 (1)             ; 9 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |clock|cpu:cpu|instruction_search:instruction_search                           ; instruction_search          ; work         ;
 ;          |adder:adder|                             ; 9 (9)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |clock|cpu:cpu|instruction_search:instruction_search|adder:adder               ; adder                       ; work         ;
 ;          |generic_register:pc|                     ; 0 (0)               ; 9 (9)                     ; 0                 ; 0          ; 0    ; 0            ; |clock|cpu:cpu|instruction_search:instruction_search|generic_register:pc       ; generic_register            ; work         ;
 ;          |muxgenerico:mux1|                        ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |clock|cpu:cpu|instruction_search:instruction_search|muxgenerico:mux1          ; muxgenerico                 ; work         ;
-;          |rom:rom|                                 ; 86 (86)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |clock|cpu:cpu|instruction_search:instruction_search|rom:rom                   ; rom                         ; work         ;
-;          |rom_cu:control_unit|                     ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |clock|cpu:cpu|instruction_search:instruction_search|rom_cu:control_unit       ; rom_cu                      ; work         ;
-;    |decoder:decoder|                               ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |clock|decoder:decoder                                                         ; decoder                     ; work         ;
+;          |rom:rom|                                 ; 83 (83)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |clock|cpu:cpu|instruction_search:instruction_search|rom:rom                   ; rom                         ; work         ;
+;          |rom_cu:control_unit|                     ; 6 (6)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |clock|cpu:cpu|instruction_search:instruction_search|rom_cu:control_unit       ; rom_cu                      ; work         ;
+;    |decoder:decoder|                               ; 10 (10)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |clock|decoder:decoder                                                         ; decoder                     ; work         ;
 ;    |display_decoder:display0|                      ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |clock|display_decoder:display0                                                ; display_decoder             ; work         ;
 ;    |display_decoder:display1|                      ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |clock|display_decoder:display1                                                ; display_decoder             ; work         ;
 ;    |display_decoder:display2|                      ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |clock|display_decoder:display2                                                ; display_decoder             ; work         ;
@@ -297,7 +297,7 @@ https://fpgasoftware.intel.com/eula.
 ;    |generic_register_read_write:register_display3| ; 1 (1)               ; 4 (4)                     ; 0                 ; 0          ; 0    ; 0            ; |clock|generic_register_read_write:register_display3                           ; generic_register_read_write ; work         ;
 ;    |generic_register_read_write:register_display4| ; 1 (1)               ; 4 (4)                     ; 0                 ; 0          ; 0    ; 0            ; |clock|generic_register_read_write:register_display4                           ; generic_register_read_write ; work         ;
 ;    |generic_register_read_write:register_display5| ; 1 (1)               ; 4 (4)                     ; 0                 ; 0          ; 0    ; 0            ; |clock|generic_register_read_write:register_display5                           ; generic_register_read_write ; work         ;
-;    |memRam:ram|                                    ; 494 (494)           ; 1024 (1024)               ; 0                 ; 0          ; 0    ; 0            ; |clock|memRam:ram                                                              ; memRam                      ; work         ;
+;    |memRam:ram|                                    ; 492 (492)           ; 1024 (1024)               ; 0                 ; 0          ; 0    ; 0            ; |clock|memRam:ram                                                              ; memRam                      ; work         ;
 +----------------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+--------------------------------------------------------------------------------+-----------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
@@ -701,23 +701,23 @@ Note: In order to hide this table in the UI and the text report file, please set
 ;     SLD               ; 8                           ;
 ;     plain             ; 4                           ;
 ; arriav_io_obuf        ; 8                           ;
-; arriav_lcell_comb     ; 781                         ;
+; arriav_lcell_comb     ; 780                         ;
 ;     arith             ; 60                          ;
 ;         1 data inputs ; 51                          ;
 ;         2 data inputs ; 1                           ;
 ;         4 data inputs ; 8                           ;
 ;     extend            ; 257                         ;
 ;         7 data inputs ; 257                         ;
-;     normal            ; 464                         ;
-;         2 data inputs ; 140                         ;
-;         3 data inputs ; 10                          ;
-;         4 data inputs ; 70                          ;
-;         5 data inputs ; 51                          ;
-;         6 data inputs ; 193                         ;
+;     normal            ; 463                         ;
+;         2 data inputs ; 11                          ;
+;         3 data inputs ; 12                          ;
+;         4 data inputs ; 203                         ;
+;         5 data inputs ; 47                          ;
+;         6 data inputs ; 190                         ;
 ; boundary_port         ; 96                          ;
 ;                       ;                             ;
 ; Max LUT depth         ; 10.00                       ;
-; Average LUT depth     ; 6.44                        ;
+; Average LUT depth     ; 6.39                        ;
 +-----------------------+-----------------------------+
 
 
@@ -736,7 +736,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
-    Info: Processing started: Sat Oct 17 19:49:07 2020
+    Info: Processing started: Sun Oct 18 10:46:10 2020
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off projeto1-descomp -c projeto1-descomp
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
 Info (12021): Found 2 design units, including 1 entities, in source file muxgenerico.vhd
@@ -797,7 +797,7 @@ Info (12021): Found 2 design units, including 1 entities, in source file divisor
     Info (12022): Found design unit 1: divisorGenerico_e_Interface-interface File: /home/felipe/Documents/insper/descomp/projeto1-descomp/divisorGenerico_e_Interface.vhd Line: 21
     Info (12023): Found entity 1: divisorGenerico_e_Interface File: /home/felipe/Documents/insper/descomp/projeto1-descomp/divisorGenerico_e_Interface.vhd Line: 5
 Info (12021): Found 2 design units, including 1 entities, in source file interface_switches.vhd
-    Info (12022): Found design unit 1: interface_switches-comportamento File: /home/felipe/Documents/insper/descomp/projeto1-descomp/interface_switches.vhd Line: 13
+    Info (12022): Found design unit 1: interface_switches-rtl File: /home/felipe/Documents/insper/descomp/projeto1-descomp/interface_switches.vhd Line: 13
     Info (12023): Found entity 1: interface_switches File: /home/felipe/Documents/insper/descomp/projeto1-descomp/interface_switches.vhd Line: 5
 Info (12127): Elaborating entity "clock" for the top level hierarchy
 Info (12128): Elaborating entity "cpu" for hierarchy "cpu:cpu" File: /home/felipe/Documents/insper/descomp/projeto1-descomp/clock.vhd Line: 61
@@ -841,14 +841,14 @@ Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
 Warning (21074): Design contains 2 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "SW[8]" File: /home/felipe/Documents/insper/descomp/projeto1-descomp/clock.vhd Line: 20
     Warning (15610): No output dependent on input pin "SW[9]" File: /home/felipe/Documents/insper/descomp/projeto1-descomp/clock.vhd Line: 20
-Info (21057): Implemented 1958 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 1957 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 11 input pins
     Info (21059): Implemented 85 output pins
-    Info (21061): Implemented 1862 logic cells
+    Info (21061): Implemented 1861 logic cells
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 14 warnings
-    Info: Peak virtual memory: 543 megabytes
-    Info: Processing ended: Sat Oct 17 19:49:22 2020
-    Info: Elapsed time: 00:00:15
-    Info: Total CPU time (on all processors): 00:00:36
+    Info: Peak virtual memory: 529 megabytes
+    Info: Processing ended: Sun Oct 18 10:46:20 2020
+    Info: Elapsed time: 00:00:10
+    Info: Total CPU time (on all processors): 00:00:24
 
 

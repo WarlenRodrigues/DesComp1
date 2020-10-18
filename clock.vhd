@@ -108,7 +108,7 @@ interface_switches: ENTITY work.interface_switches
   PORT MAP (
 		sw_in => SW,
 		sw_out => data_in_cpu,
-		habilita => habilita_sw
+		habilitate => habilita_sw
   );
 
 display0 :  entity work.display_decoder

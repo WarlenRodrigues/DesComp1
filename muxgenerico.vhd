@@ -14,5 +14,6 @@ end entity;
 
 architecture rtl of muxgenerico is
   begin
+  -- Habilita a saida A ou a saida B de acordo com o seletor.
     saida_MUX <= entradaB_MUX when (seletor_MUX = '1') else entradaA_MUX;
 end architecture;
