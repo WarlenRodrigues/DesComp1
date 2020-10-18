@@ -24,17 +24,17 @@ O assembler desse projeto é um objeto que possui os seguintes atributos e méto
 #### Assembly
 O nosso processador nos permite escrever código em assembly utilizando as seguintes instruções:
 
-|            Instrução           | OpCode        | Descrição                                                       |
-| -------------------------------|:-------------:|----------------------------------------------------------------:|
-| LOAD <REG>, #<IMEDIATO>        |      0001     | Carrega o valor <IMEDIATO> no registrador de endereço <REG>.    |
-| ADD <REG>,%<MEM[IMEDIATO]>     |      0010     | Carrega um valor da memória e soma com o registrador <REG>.     |
-| ADDI <REG>, #<IMEDIATO>        |      0100     | Soma um valor constante em um registrador de endereço <REG>.    |
-| STORE <REG>,  %<MEM[IMEDIATO]> |      1000     | Guarda o valor em <REG> no endereço de <MEM>.                   |
-| SUB <REG>, %<MEM[IMEDIATO]>    |      0011     | Carrega um valor da memória e subtrai com o registrador <REG>.  |
-| SUBI <REG>, #<IMEDIATO>        |      0101     | Subtrai um valor constante em um registrador de endereço <REG>  |
-| JMP <MEM[Imediato]>            |      0110     | Redireciona para a instrução <MEM> na memória de Instruções     |
-| CMP  <REG>, %<MEM>             |      1001     | Realiza a comparação entre <REG> e <MEM> e guarda no flip flop. |
-| JE <MEM[Imediato]>             |      0111     | Redireciona instrução se o bit no flip flop é igual a 1.        |
+|            Instrução      | OpCode        | Descrição                                                       |
+| --------------------------|:-------------:|----------------------------------------------------------------:|
+| LOAD REG, #IMEDIATO       |      0001     | Carrega o valor <IMEDIATO> no registrador de endereço <REG>.    |
+| ADD REG, %MEM[IMEDIATO]   |      0010     | Carrega um valor da memória e soma com o registrador <REG>.     |
+| ADDI REG, #IMEDIATO       |      0100     | Soma um valor constante em um registrador de endereço <REG>.    |
+| STORE REG, %MEM[IMEDIATO] |      1000     | Guarda o valor em <REG> no endereço de <MEM>.                   |
+| SUB REG, %MEM[IMEDIATO]   |      0011     | Carrega um valor da memória e subtrai com o registrador <REG>.  |
+| SUBI REG, #IMEDIATO       |      0101     | Subtrai um valor constante em um registrador de endereço <REG>  |
+| JMP MEM[Imediato]         |      0110     | Redireciona para a instrução <MEM> na memória de Instruções     |
+| CMP REG, %MEM             |      1001     | Realiza a comparação entre <REG> e <MEM> e guarda no flip flop. |
+| JE MEM[Imediato]          |      0111     | Redireciona instrução se o bit no flip flop é igual a 1.        |
 
 
 Todos os valores são escritos em decimal, e os prefixos `#` e `%` indicam se são valores numéricos ou endereços da memória respectivamente. 
