@@ -1,5 +1,5 @@
 # Design de Computadores - Projeto 1 - Relógio digital
-#### Felipe Aron Nudelman, Gabriel Magalhães Duarte e Warlen César Rodrigues Filho
+#### Felipe Aron Nudelman, Gabriel Magalhães Duarte Klabin e Warlen César Rodrigues Filho
 
 ## :computer: Ferramentas de desenvolvimento
 
