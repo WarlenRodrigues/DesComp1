@@ -66,3 +66,7 @@ Esta função consiste em pausar o relógio. Ao acionar a chave SW4, o relógio 
 ## Informações técnicas e diagramas
 - Entenda nossa arquitetura, diagramas, unidades funcionais e mais detalhes do projeto...  
 :point_right: [Acesse às informações do projeto](https://docs.google.com/document/d/1iSeh1RMxmLeC8MS8Etr-W29YoRSlrA4OQO4GgeF3XZ4/edit?usp=sharing)
+
+## Vídeo demonstrativo do projeto
+[Assista ao vídeo](https://www.youtube.com/watch?v=F1zJpvmqpkM&feature=youtu.be)
+
