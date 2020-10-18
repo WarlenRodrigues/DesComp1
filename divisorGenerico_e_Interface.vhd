@@ -12,7 +12,8 @@ entity divisorGenerico_e_Interface is
         clk                 :   in std_logic;
         habilitaLeitura     : in std_logic;
         limpaLeitura        : in std_logic;
-        leituraUmSegundo    :   out std_logic_vector((DATA_WIDTH - 1) DOWNTO 0)
+        leituraUmSegundo    :   out std_logic_vector((DATA_WIDTH - 1) DOWNTO 0);
+		  chave : in std_logic
    );
 
 end entity;
@@ -21,12 +22,20 @@ architecture interface of divisorGenerico_e_Interface is
 
   signal sinalUmSegundo : std_logic;
   signal saidaclk_reg1seg : std_logic;
-
+  signal saida_clk : std_logic;
+  signal saida_clk_2 : std_logic;
+  
 begin
 
-baseTempo: entity work.divisorGenerico
+saidaclk_reg1seg <= saida_clk when chave = '0' else saida_clk_2;
+
+baseTempo1: entity work.divisorGenerico
            generic map (divisor => 25000000)   -- divide por 10.
-           port map (clk => clk, saida_clk => saidaclk_reg1seg);
+           port map (clk => clk, saida_clk => saida_clk);
+
+baseTempo2: entity work.divisorGenerico
+           generic map (divisor => 100000)   -- divide por 10.
+           port map (clk => clk, saida_clk => saida_clk_2);
 
 registraUmSegundo: entity work.flipflop
    port map (
@@ -36,6 +45,7 @@ registraUmSegundo: entity work.flipflop
         CLK => saidaclk_reg1seg,
         RST => limpaLeitura
     );
+	 
 
 -- Faz o tristate de saida:
 leituraUmSegundo <= ("0000000" & sinalUmSegundo) when habilitaLeitura = '1' else "ZZZZZZZZ";

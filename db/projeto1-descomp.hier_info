@@ -85,6 +85,7 @@ LEDR[5] <= cpu:cpu.pintest[5]
 LEDR[6] <= cpu:cpu.pintest[6]
 LEDR[7] <= cpu:cpu.pintest[7]
 LEDR[8] <= cpu:cpu.pintest[8]
+SW[0] => divisorgenerico_e_interface:temporizador.chave
 SW[0] => interface_switches:interface_switches.sw_in[0]
 SW[1] => interface_switches:interface_switches.sw_in[1]
 SW[2] => interface_switches:interface_switches.sw_in[2]
@@ -95,6 +96,14 @@ SW[6] => interface_switches:interface_switches.sw_in[6]
 SW[7] => interface_switches:interface_switches.sw_in[7]
 SW[8] => interface_switches:interface_switches.sw_in[8]
 SW[9] => interface_switches:interface_switches.sw_in[9]
+data_out[0] <= data_in_cpu[0].DB_MAX_OUTPUT_PORT_TYPE
+data_out[1] <= data_in_cpu[1].DB_MAX_OUTPUT_PORT_TYPE
+data_out[2] <= data_in_cpu[2].DB_MAX_OUTPUT_PORT_TYPE
+data_out[3] <= data_in_cpu[3].DB_MAX_OUTPUT_PORT_TYPE
+data_out[4] <= data_in_cpu[4].DB_MAX_OUTPUT_PORT_TYPE
+data_out[5] <= data_in_cpu[5].DB_MAX_OUTPUT_PORT_TYPE
+data_out[6] <= data_in_cpu[6].DB_MAX_OUTPUT_PORT_TYPE
+data_out[7] <= data_in_cpu[7].DB_MAX_OUTPUT_PORT_TYPE
 
 
 |clock|cpu:cpu
@@ -896,7 +905,8 @@ Dado[11] <= Dado.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |clock|divisorGenerico_e_Interface:temporizador
-clk => divisorgenerico:baseTempo.clk
+clk => divisorgenerico:baseTempo1.clk
+clk => divisorgenerico:baseTempo2.clk
 habilitaLeitura => leituraUmSegundo[0].OE
 habilitaLeitura => leituraUmSegundo[1].OE
 habilitaLeitura => leituraUmSegundo[2].OE
@@ -914,9 +924,10 @@ leituraUmSegundo[4] <= leituraUmSegundo[4].DB_MAX_OUTPUT_PORT_TYPE
 leituraUmSegundo[5] <= leituraUmSegundo[5].DB_MAX_OUTPUT_PORT_TYPE
 leituraUmSegundo[6] <= leituraUmSegundo[6].DB_MAX_OUTPUT_PORT_TYPE
 leituraUmSegundo[7] <= leituraUmSegundo[7].DB_MAX_OUTPUT_PORT_TYPE
+chave => saidaclk_reg1seg.OUTPUTSELECT
 
 
-|clock|divisorGenerico_e_Interface:temporizador|divisorGenerico:baseTempo
+|clock|divisorGenerico_e_Interface:temporizador|divisorGenerico:baseTempo1
 clk => tick.CLK
 clk => contador[0].CLK
 clk => contador[1].CLK
@@ -943,6 +954,28 @@ clk => contador[21].CLK
 clk => contador[22].CLK
 clk => contador[23].CLK
 clk => contador[24].CLK
+saida_clk <= tick.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|clock|divisorGenerico_e_Interface:temporizador|divisorGenerico:baseTempo2
+clk => tick.CLK
+clk => contador[0].CLK
+clk => contador[1].CLK
+clk => contador[2].CLK
+clk => contador[3].CLK
+clk => contador[4].CLK
+clk => contador[5].CLK
+clk => contador[6].CLK
+clk => contador[7].CLK
+clk => contador[8].CLK
+clk => contador[9].CLK
+clk => contador[10].CLK
+clk => contador[11].CLK
+clk => contador[12].CLK
+clk => contador[13].CLK
+clk => contador[14].CLK
+clk => contador[15].CLK
+clk => contador[16].CLK
 saida_clk <= tick.DB_MAX_OUTPUT_PORT_TYPE
 
 

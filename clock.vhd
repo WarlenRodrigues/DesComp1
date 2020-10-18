@@ -17,8 +17,8 @@ entity clock is
 		  pintestULAB: out STD_LOGIC_VECTOR(7 downto 0);
 		  pintestULAFLAG: out STD_LOGIC;
 		  LEDR: out STD_LOGIC_VECTOR(8 downto 0);
-		  SW : IN std_logic_vector(9 DOWNTO 0)
-
+		  SW : IN std_logic_vector(9 DOWNTO 0);
+		  data_out : out STD_LOGIC_VECTOR (7 downto 0)
     );
 end entity;
 
@@ -35,6 +35,7 @@ signal out_pintest : STD_LOGIC_VECTOR(8 downto 0);
 signal clk : STD_LOGIC;
 
 
+
 signal pintestA : STD_LOGIC_VECTOR(7 downto 0);
 signal pintestB : STD_LOGIC_VECTOR(7 downto 0);
 signal pintestFlag: STD_LOGIC;
@@ -48,11 +49,14 @@ alias habilita_temp : STD_LOGIC is habilitates(10);
 alias habilita_clear_temp : STD_LOGIC is habilitates(11);
 alias habilita_sw : STD_LOGIC is habilitates(6);
 
+alias chave_to_temporizador : STD_LOGIC is SW(0);
+
 begin
 pintest <= out_pintest;
 -- Comment this line
 clk <= clock_50;
 LEDR <= out_pintest;
+data_out <= data_in_cpu;
 
 cpu : entity work.cpu port map (clock => clk,
 		  addresses => addresses,
@@ -84,7 +88,8 @@ temporizador: entity work.divisorGenerico_e_Interface
 		clk                 => clk,
 		habilitaLeitura     => habilita_temp,
 		limpaLeitura        => habilita_clear_temp,
-		leituraUmSegundo    => data_in_cpu
+		leituraUmSegundo    => data_in_cpu,
+		chave => chave_to_temporizador
   );
 
 register_display0 : entity work.generic_register_read_write	port map(DIN => cpu_to_register_display, DOUT => register_to_display0, ENABLE => habilitates(0), W => habilitate_write_mem, CLK => clk, RST => '0');
