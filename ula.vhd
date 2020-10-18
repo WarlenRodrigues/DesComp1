@@ -9,16 +9,18 @@ entity ULA is
     );
     port
     (
+	 -- Definimos os pinos de entrada e saida da ULA.
       entradaA, entradaB:  in STD_LOGIC_VECTOR((larguraDados-1) downto 0);
       seletor:  in STD_LOGIC_VECTOR(2 downto 0);
       saida:    out STD_LOGIC_VECTOR((larguraDados-1) downto 0);
-      flagZero: out std_logic;
-		pintestA, pintestB :  out STD_LOGIC_VECTOR((larguraDados-1) downto 0)
+      flagZero: out std_logic
     );
 end entity;
 
 architecture rtl of ULA is
   constant zero : std_logic_vector(larguraDados-1 downto 0) := (others => '0');
+  
+  -- Dependendo da operacao que chega no seletor da ULA uma das operacoes a seguir sera retornada.
 
    signal soma :      STD_LOGIC_VECTOR((larguraDados-1) downto 0);
    signal subtracao : STD_LOGIC_VECTOR((larguraDados-1) downto 0);
@@ -28,14 +30,17 @@ architecture rtl of ULA is
    signal op_not :    STD_LOGIC_VECTOR((larguraDados-1) downto 0);
 
     begin
+	 
+		-- Todas as operacoes sao realizadas.
+		
       soma      <= STD_LOGIC_VECTOR(unsigned(entradaA) + unsigned(entradaB));
       subtracao <= STD_LOGIC_VECTOR(unsigned(entradaA) - unsigned(entradaB));
       op_and    <= entradaA and entradaB;
       op_or     <= entradaA or entradaB;
       op_xor    <= entradaA xor entradaB;
       op_not    <= not entradaA;
-		pintestA <= entradaA;
-		pintestB <= entradaB;
+
+		-- A saida sera selecionada de acordo com o seletor.
 
       saida <= soma when (seletor = "000") else
           subtracao when (seletor = "001") else
@@ -47,6 +52,8 @@ architecture rtl of ULA is
           op_or when     (seletor = "111") else
           entradaA;      -- outra opcao: saida = entradaA
 
+		-- A flagZero e utilizada para operacoes do tipo CMP. No caso da entrada A ser igual a entrada B a saida da flagZero e 1. Caso contrario
+		-- e zero.
       flagZero <= '1' when unsigned(entradaA) = unsigned(entradaB) else '0';
 
 end architecture;

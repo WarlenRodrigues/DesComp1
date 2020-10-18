@@ -172,146 +172,6 @@
 					"strict" : false
 				},
 				{
-					"name" : "pintest[0]",
-					"strict" : false
-				},
-				{
-					"name" : "pintest[1]",
-					"strict" : false
-				},
-				{
-					"name" : "pintest[2]",
-					"strict" : false
-				},
-				{
-					"name" : "pintest[3]",
-					"strict" : false
-				},
-				{
-					"name" : "pintest[4]",
-					"strict" : false
-				},
-				{
-					"name" : "pintest[5]",
-					"strict" : false
-				},
-				{
-					"name" : "pintest[6]",
-					"strict" : false
-				},
-				{
-					"name" : "pintest[7]",
-					"strict" : false
-				},
-				{
-					"name" : "pintest[8]",
-					"strict" : false
-				},
-				{
-					"name" : "pintestULAA[0]",
-					"strict" : false
-				},
-				{
-					"name" : "pintestULAA[1]",
-					"strict" : false
-				},
-				{
-					"name" : "pintestULAA[2]",
-					"strict" : false
-				},
-				{
-					"name" : "pintestULAA[3]",
-					"strict" : false
-				},
-				{
-					"name" : "pintestULAA[4]",
-					"strict" : false
-				},
-				{
-					"name" : "pintestULAA[5]",
-					"strict" : false
-				},
-				{
-					"name" : "pintestULAA[6]",
-					"strict" : false
-				},
-				{
-					"name" : "pintestULAA[7]",
-					"strict" : false
-				},
-				{
-					"name" : "pintestULAB[0]",
-					"strict" : false
-				},
-				{
-					"name" : "pintestULAB[1]",
-					"strict" : false
-				},
-				{
-					"name" : "pintestULAB[2]",
-					"strict" : false
-				},
-				{
-					"name" : "pintestULAB[3]",
-					"strict" : false
-				},
-				{
-					"name" : "pintestULAB[4]",
-					"strict" : false
-				},
-				{
-					"name" : "pintestULAB[5]",
-					"strict" : false
-				},
-				{
-					"name" : "pintestULAB[6]",
-					"strict" : false
-				},
-				{
-					"name" : "pintestULAB[7]",
-					"strict" : false
-				},
-				{
-					"name" : "pintestULAFLAG",
-					"strict" : false
-				},
-				{
-					"name" : "LEDR[0]",
-					"strict" : false
-				},
-				{
-					"name" : "LEDR[1]",
-					"strict" : false
-				},
-				{
-					"name" : "LEDR[2]",
-					"strict" : false
-				},
-				{
-					"name" : "LEDR[3]",
-					"strict" : false
-				},
-				{
-					"name" : "LEDR[4]",
-					"strict" : false
-				},
-				{
-					"name" : "LEDR[5]",
-					"strict" : false
-				},
-				{
-					"name" : "LEDR[6]",
-					"strict" : false
-				},
-				{
-					"name" : "LEDR[7]",
-					"strict" : false
-				},
-				{
-					"name" : "LEDR[8]",
-					"strict" : false
-				},
-				{
 					"name" : "data_out[0]",
 					"strict" : false
 				},
@@ -344,6 +204,10 @@
 					"strict" : false
 				},
 				{
+					"name" : "clock_50",
+					"strict" : false
+				},
+				{
 					"name" : "SW[0]",
 					"strict" : false
 				},
@@ -373,10 +237,6 @@
 				},
 				{
 					"name" : "SW[7]",
-					"strict" : false
-				},
-				{
-					"name" : "clock_50",
 					"strict" : false
 				}
 			]
