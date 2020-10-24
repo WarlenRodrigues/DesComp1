@@ -1,6 +1,37 @@
 # Design de Computadores - Projeto 1 - Relógio digital
 #### Felipe Aron Nudelman, Gabriel Magalhães Duarte Klabin e Warlen César Rodrigues Filho
 
+## :clock10: Ajuste, apresentação e manuseio do tempo no relógio
+
+#### Alteração de velocidade da base de tempo
+Esta função altera a velocidade com a qual os segundos passam, de modo que seja possível validar mais rapidamente o funcionamento pleno do relógio. Sua ativação é controlada pela chave SW0 que, quando posicionada para baixo, 
+faz com que o tempo passe normalmente, ou seja, um segundo por segundo. Quando SW0 está acionada (para cima), o tempo no relógio passa mais rápido.
+
+#### Ajuste do tempo com base nas casas temporais 
+Esta função nos permite ajustar o horário exibido nos displays de sete segmentos controlando as casas de segundo, minuto e hora. Cada casa é controlada por uma chave sendo:  
+
+O controle é bem simples, ao acionar a chave de controle, a contagem padrão congela e a casa selecionada passa a ser incrementada em uma unidade por segundo. (i.e.: Se a chave SW3 for ativada, as casas de minutos e segundos congelam enquanto a casa das horas é incrementada em uma unidade por segundo.)  
+Esta função exerce o papel de ajuste de horário, como previsto nos requisitos do projeto.
+
+#### Congelamento de tempo
+Esta função consiste em pausar o relógio. Ao acionar a chave SW4, o relógio congelará até que a chave volte ao seu estado inativo.
+- SW0 - Altera para modo acelerado  
+- SW1 - Ajusta segundos  
+- SW2 - Ajusta minutos  
+- SW3 - Ajusta houras  
+- SW4 - Pausa o relógio  
+
+#### Indicação AM/PM
+Nosso relógio mostra o horário de 12 em 12 horas, de modo que, quando o LED R0 estiver aceso, o período é AM e, quando o LED R0 estiver apagado, o período é PM.
+- LED R0 - Indicador de período AM/PM  
+
+#### Countdown - Contadior Regressivo
+Para ativar esta função, basta acionar a chave SW5 e o tempo começará a decrementar ao invés de increementar. Ao chegar em zero o relógio parará de decrementar. Para que ele volte a incrementar normalmente, basta deslihgar a chave SW5.  
+Importante lembrar que para que isso funcione, todas as demais chaves devem estar desligadas.
+- SW5 - Ativa contagem regressiva
+
+###### :no_entry: IMPORTANTE: As chaves devem ser acionadas separadamente. Ou seja, somente uma chave acionada por vez. Acionar as chaves simultaneamente pode gerar comportamentos inesperados.
+
 ## :computer: Ferramentas de desenvolvimento
 
 #### Assembler
@@ -36,41 +67,8 @@ O nosso processador nos permite escrever código em assembly utilizando as segui
 | CMP REG, %MEM             |      1001     | Realiza a comparação entre <REG> e <MEM> e guarda no flip flop. |
 | JE MEM[Imediato]          |      0111     | Redireciona instrução se o bit no flip flop é igual a 1.        |
 
-
 Todos os valores são escritos em decimal, e os prefixos `#` e `%` indicam se são valores numéricos ou endereços da memória respectivamente. 
 As Labels também são utilizadas como um forma de gravar o endereço de alguma instrução na ROM, para  executar loops ou funções e seguem o formato <NOME_LABEL>: <INSTRUCAO>.
-
-
-## :clock10: Ajuste, apresentação e manuseio do tempo no relógio
-
-#### Alteração de velocidade da base de tempo
-Esta função altera a velocidade com a qual os segundos passam, de modo que seja possível validar mais rapidamente o funcionamento pleno do relógio. Sua ativação é controlada pela chave SW0 que, quando posicionada para baixo, 
-faz com que o tempo passe normalmente, ou seja, um segundo por segundo. Quando SW0 está acionada (para cima), o tempo no relógio passa mais rápido.
-
-#### Ajuste do tempo com base nas casas temporais 
-Esta função nos permite ajustar o horário exibido nos displays de sete segmentos controlando as casas de segundo, minuto e hora. Cada casa é controlada por uma chave sendo:  
-
-O controle é bem simples, ao acionar a chave de controle, a contagem padrão congela e a casa selecionada passa a ser incrementada em uma unidade por segundo. (i.e.: Se a chave SW3 for ativada, as casas de minutos e segundos congelam enquanto a casa das horas é incrementada em uma unidade por segundo.)  
-Esta função exerce o papel de ajuste de horário, como previsto nos requisitos do projeto.
-
-#### Congelamento de tempo
-Esta função consiste em pausar o relógio. Ao acionar a chave SW4, o relógio congelará até que a chave volte ao seu estado inativo.
-- SW0 - Altera para modo acelerado  
-- SW1 - Ajusta segundos  
-- SW2 - Ajusta minutos  
-- SW3 - Ajusta houras  
-- SW4 - Pausa o relógio  
-
-#### Indicação AM/PM
-Nosso relógio mostra o horário de 12 em 12 horas, de modo que, quando o LED R0 estiver aceso, o período é AM e, quando o LED R0 estiver apagado, o período é PM.
-- LED R0 - Indicador de período AM/PM  
-
-#### Countdown - Contadior Regressivo
-Para ativar esta função, basta acionar a chave SW5 e o tempo começará a decrementar ao invés de increementar. Ao chegar em zero o relógio parará de decrementar. Para que ele volte a incrementar normalmente, basta deslihgar a chave SW5.  
-Importante lembrar que para que isso funcione, todas as demais chaves devem estar desligadas.
-- SW5 - Ativa contagem regressiva
-
-###### :no_entry: IMPORTANTE: As chaves devem ser acionadas separadamente. Ou seja, somente uma chave acionada por vez. Acionar as chaves simultaneamente pode gerar comportamentos inesperados.
  
 ## Informações técnicas e diagramas
 - Entenda nossa arquitetura, diagramas, unidades funcionais e mais detalhes do projeto...  
